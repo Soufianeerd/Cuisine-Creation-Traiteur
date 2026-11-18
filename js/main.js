@@ -166,36 +166,23 @@
   /* ------------------------------------------------------------------------
      5. DIAPORAMA DU HERO
      Les photos sont les <div class="slide"> dans index.html. La classe "on"
-     affiche la photo active. Les boutons à droite (.hero-index) permettent
-     de choisir une photo. Pour ajouter une photo : ajouter un .slide ET un
-     bouton dans le HTML, avec data-i = son numéro (à partir de 0).
+     affiche la photo active ; elles s'enchaînent automatiquement en fondu.
+     Pour ajouter une photo : ajouter un <div class="slide"><img …></div>.
      ------------------------------------------------------------------------ */
   var slides = [].slice.call(document.querySelectorAll('.slide'));
-  var slideButtons = [].slice.call(document.querySelectorAll('.hero-index button'));
   var current = 0;
-  var slideTimer;
 
   function showSlide(i) {
     slides[current].classList.remove('on');
-    slideButtons[current].classList.remove('on');
     current = i;
     slides[current].classList.add('on');
-    slideButtons[current].classList.add('on');
   }
 
-  function autoPlay() {
-    clearInterval(slideTimer);
-    if (!reduce) {
-      slideTimer = setInterval(function () {
-        showSlide((current + 1) % slides.length);
-      }, SLIDE_INTERVAL);
-    }
+  if (!reduce && slides.length > 1) {
+    setInterval(function () {
+      showSlide((current + 1) % slides.length);
+    }, SLIDE_INTERVAL);
   }
-
-  slideButtons.forEach(function (btn, i) {
-    btn.addEventListener('click', function () { showSlide(i); autoPlay(); });
-  });
-  autoPlay();
 
 
   /* ------------------------------------------------------------------------
@@ -308,8 +295,7 @@
           end: function () { return '+=' + distance(); },
           pin: true,               // la section reste fixée pendant le défilement
           scrub: 1,
-          invalidateOnRefresh: true,
-          onUpdate: function (self) { gsap.set('.sig-progress i', { scaleX: self.progress }); }
+          invalidateOnRefresh: true
         }
       });
 

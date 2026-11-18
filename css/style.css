@@ -182,15 +182,6 @@ em{font-style:italic}
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity 1.2s var(--ease) .5s,transform 1.2s var(--ease) .5s}
 .ready .hero .eyebrow,.ready .fade-up{opacity:1;transform:none}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
-.hero-index{position:absolute;z-index:3;right:var(--pad);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px}
-.hero-index button{background:none;border:0;padding:6px 0;cursor:pointer;display:flex;align-items:center;gap:12px;color:rgba(244,238,227,.55);font-size:11px;letter-spacing:.22em;text-transform:uppercase;justify-content:flex-end}
-.hero-index button i{display:block;width:28px;height:1px;background:currentColor;transition:width .6s var(--ease)}
-.hero-index button.on{color:var(--gold)}
-.hero-index button.on i{width:56px}
-.scroll-cue{position:absolute;z-index:3;left:50%;bottom:22px;transform:translateX(-50%);width:1px;height:54px;background:rgba(244,238,227,.25);overflow:hidden}
-.scroll-cue::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--gold);animation:cue 2.2s var(--ease) infinite}
-@keyframes cue{to{top:110%}}
-@media (max-width:760px){.hero-index{top:auto;bottom:auto;right:auto;left:var(--pad);top:104px;transform:none;flex-direction:row}.hero-index button span{display:none}.scroll-cue{display:none}}
 
 
 /* ==========================================================================
@@ -279,8 +270,6 @@ em{font-style:italic}
 .s-high{align-self:flex-start;margin-top:12vh}
 .sig-end{flex:0 0 min(420px,80vw);display:flex;flex-direction:column;gap:22px;padding:0 4vw}
 .sig-end p{font-family:var(--serif);font-size:clamp(28px,2.6vw,42px);line-height:1.15;margin:0;font-weight:300}
-.sig-progress{position:absolute;left:var(--pad);right:var(--pad);bottom:34px;height:1px;background:rgba(244,238,227,.14)}
-.sig-progress i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
 @media (max-width:900px),(prefers-reduced-motion:reduce){
   .sig-pin{height:auto;display:block;padding:90px 0 70px}
   .sig-track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:10px}
@@ -289,7 +278,6 @@ em{font-style:italic}
   .s-low,.s-high{align-self:center;margin:0}
   .s-tall .ph{width:72vw;height:96vw;max-height:520px}
   .s-sq .ph{width:78vw;height:78vw;max-height:460px}
-  .sig-progress{display:none}
 }
 
 
