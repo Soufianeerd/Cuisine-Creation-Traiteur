@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuisine Création Traiteur — L’art de recevoir depuis 2006</title>
+<meta name="description" content="Traiteur organisateur de réception depuis 2006 : galas, séminaires, mariages, réceptions privées et chef à domicile en Grand Est, au Luxembourg et en Belgique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121110; --ink-2:#1B1917; --ivory:#F4EEE3; --ivory-2:#EAE2D3;
+  --gold:#C4A26A; --gold-deep:#7A5E33; --green:#1C3530; --green-2:#24443D;
+  --muted-light:#5F5A52; --muted-dark:#A7A096; --muted-green:#B9C6BF;
+  --serif:'Cormorant Garamond', 'Times New Roman', serif;
+  --sans:'Manrope', system-ui, -apple-system, sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --pad:clamp(20px,5vw,72px);
+  --max:1360px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:clamp(15px,1.05vw,17px);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:200;background:var(--gold);color:var(--ink);padding:10px 16px;text-decoration:none;font-weight:600}
+.skip:focus{left:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:600}
+.serif{font-family:var(--serif)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;margin:0;letter-spacing:-.01em}
+em{font-style:italic}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 30px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:var(--ivory)}
+.btn-line{border-color:rgba(244,238,227,.45);color:var(--ivory);background:transparent}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn-ink{background:var(--ink);color:var(--ivory)}
+.btn-ink:hover{background:var(--green)}
+.btn .arr{display:inline-block;transition:transform .5s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+
+/* ---------- Preloader ---------- */
+.loader{position:fixed;inset:0;z-index:300;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;transition:transform 1.1s var(--ease)}
+.loader img{width:74px;opacity:0;transform:translateY(12px);animation:lIn 1s var(--ease) .1s forwards}
+.loader .bar{width:160px;height:1px;background:rgba(196,162,106,.25);overflow:hidden}
+.loader .bar i{display:block;height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:lBar 1.3s var(--ease) .2s forwards}
+.loader.done{transform:translateY(-100%)}
+@keyframes lIn{to{opacity:1;transform:none}}
+@keyframes lBar{to{transform:scaleX(1)}}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .6s var(--ease),transform .6s var(--ease),padding .6s var(--ease);padding:22px 0}
+.hdr.scrolled{background:rgba(18,17,16,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0}
+.hdr.hide{transform:translateY(-100%)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ivory)}
+.brand img{height:46px;width:auto;transition:height .6s var(--ease)}
+.hdr.scrolled .brand img{height:38px}
+.brand span{font-family:var(--serif);font-size:21px;line-height:1;letter-spacing:.02em}
+.brand small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.34em;color:var(--gold);margin-top:5px;font-weight:600}
+.nav{display:flex;gap:34px;align-items:center}
+.nav a{color:var(--ivory);text-decoration:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;position:relative;padding:8px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.hdr .btn{min-height:44px;padding:0 22px;font-size:12px}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:1px solid rgba(244,238,227,.35);background:transparent;cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1px;background:var(--ivory);transition:transform .5s var(--ease),top .5s var(--ease)}
+.burger i:nth-child(1){top:20px}.burger i:nth-child(2){top:27px}
+.menu-open .burger i:nth-child(1){top:24px;transform:rotate(45deg)}
+.menu-open .burger i:nth-child(2){top:24px;transform:rotate(-45deg)}
+@media (max-width:1080px){.nav,.hdr .btn-desk{display:none}.burger{display:block}}
+
+/* ---------- Mobile menu ---------- */
+.mmenu{position:fixed;inset:0;z-index:90;background:var(--green);color:var(--ivory);display:flex;flex-direction:column;justify-content:center;padding:110px var(--pad) 40px;clip-path:circle(0% at calc(100% - 48px) 46px);transition:clip-path .9s var(--ease);visibility:hidden}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 48px) 46px);visibility:visible}
+.mmenu ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.mmenu a.big{font-family:var(--serif);font-size:clamp(38px,9vw,64px);text-decoration:none;line-height:1.15;display:flex;align-items:baseline;gap:16px}
+.mmenu a.big sup{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.mmenu .mfoot{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px 28px;font-size:14px;color:var(--muted-green)}
+.mmenu .mfoot a{text-decoration:none}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:100svh;min-height:620px;overflow:hidden;background:var(--ink);color:var(--ivory)}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s var(--ease)}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transition:transform 9s linear}
+.slide.on{opacity:1}
+.slide.on img{transform:scale(1.02)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.55) 0%,rgba(18,17,16,.1) 35%,rgba(18,17,16,.25) 60%,rgba(18,17,16,.88) 100%)}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(36px,7vh,80px)}
+.hero h1{font-size:clamp(48px,8.6vw,148px);font-weight:300;max-width:12ch}
+.hero h1 em{color:var(--gold);font-weight:300}
+.line{display:block;overflow:hidden;padding-bottom:.06em}
+.line>span{display:block;transform:translateY(110%);transition:transform 1.4s var(--ease)}
+.ready .line>span{transform:none}
+.ready .line:nth-child(2)>span{transition-delay:.12s}
+.ready .line:nth-child(3)>span{transition-delay:.24s}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px 64px;align-items:flex-end;justify-content:space-between;margin-top:clamp(24px,4vh,44px)}
+.hero-meta p{margin:0;max-width:440px;color:#DDD5C7;font-size:clamp(15px,1.15vw,18px)}
+.hero .eyebrow{color:var(--gold);margin-bottom:22px;opacity:0;transform:translateY(14px);transition:all 1.2s var(--ease) .1s}
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity 1.2s var(--ease) .5s,transform 1.2s var(--ease) .5s}
+.ready .hero .eyebrow,.ready .fade-up{opacity:1;transform:none}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-index{position:absolute;z-index:3;right:var(--pad);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px}
+.hero-index button{background:none;border:0;padding:6px 0;cursor:pointer;display:flex;align-items:center;gap:12px;color:rgba(244,238,227,.55);font-size:11px;letter-spacing:.22em;text-transform:uppercase;justify-content:flex-end}
+.hero-index button i{display:block;width:28px;height:1px;background:currentColor;transition:width .6s var(--ease)}
+.hero-index button.on{color:var(--gold)}
+.hero-index button.on i{width:56px}
+.scroll-cue{position:absolute;z-index:3;left:50%;bottom:22px;transform:translateX(-50%);width:1px;height:54px;background:rgba(244,238,227,.25);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--gold);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{to{top:110%}}
+@media (max-width:760px){.hero-index{top:auto;bottom:auto;right:auto;left:var(--pad);top:104px;transform:none;flex-direction:row}.hero-index button span{display:none}.scroll-cue{display:none}}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:18px 0;font-family:var(--serif);font-size:clamp(22px,2.4vw,34px);font-style:italic}
+.marquee .track{display:inline-flex;gap:48px;animation:mq 38s linear infinite;padding-right:48px}
+.marquee span{display:inline-flex;align-items:center;gap:48px}
+.marquee span::after{content:"✦";font-style:normal;font-size:.5em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- Manifesto ---------- */
+.manifesto{position:relative;padding:clamp(110px,16vw,220px) 0 clamp(90px,12vw,160px);overflow:hidden}
+.manifesto .eyebrow{color:var(--gold-deep);text-align:center;margin-bottom:34px}
+.manifesto .big{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.3vw,68px);line-height:1.14;text-align:center;max-width:22ch;margin:0 auto;position:relative;z-index:2}
+.manifesto .big .w{opacity:.14;transition:opacity .3s}
+.manifesto .big em{color:var(--gold-deep)}
+.signline{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 22px;margin:clamp(48px,6vw,80px) 0 0;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-light);font-weight:600}
+.signline i{display:block;width:48px;height:1px;background:var(--gold-deep)}
+
+/* ---------- Univers (stacking cards) ---------- */
+.univers{background:var(--green);color:var(--ivory);padding:clamp(90px,11vw,150px) 0 clamp(60px,8vw,110px)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 60px;margin-bottom:clamp(44px,6vw,80px)}
+.sec-head h2{font-size:clamp(42px,6vw,96px);font-weight:300;max-width:14ch}
+.sec-head h2 em{color:var(--gold)}
+.sec-head p{max-width:400px;margin:0;color:var(--muted-green)}
+.univers .eyebrow{color:var(--gold);margin-bottom:22px}
+.cards{display:flex;flex-direction:column;gap:6vh}
+.card{position:sticky;top:12vh;height:min(78vh,760px);min-height:520px;display:grid;grid-template-columns:1.25fr 1fr;background:var(--ink);overflow:hidden;border-radius:4px;transform-origin:center top;will-change:transform}
+.card:nth-child(2){top:14vh;background:#191715}
+.card:nth-child(3){top:16vh;background:#1E1C19}
+.card:nth-child(4){top:18vh;background:#23201C}
+.card .media{position:relative;overflow:hidden}
+.card .media img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover}
+.card .media .inset{position:absolute;right:-1px;bottom:-1px;width:38%;aspect-ratio:3/4;border:10px solid var(--ink);border-width:10px 0 0 10px;overflow:hidden}
+.card:nth-child(2) .media .inset{border-color:#191715}
+.card .media .inset img{inset:0;height:100%}
+.card .body{padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.card .num{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.2em}
+.card h3{font-size:clamp(38px,4.4vw,72px);font-weight:300}
+.card h3 em{color:var(--gold)}
+.card p{color:#CFC7B8;margin:0;max-width:440px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{border:1px solid rgba(244,238,227,.2);border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.06em;color:#DDD5C7}
+.card .lnk{display:inline-flex;align-items:center;gap:14px;color:var(--gold);text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:10px 0;align-self:flex-start}
+.card .lnk i{display:block;width:40px;height:1px;background:currentColor;transition:width .6s var(--ease)}
+.card .lnk:hover i{width:70px}
+@media (max-width:900px){.card{grid-template-columns:1fr;grid-template-rows:44% 1fr;height:auto;min-height:0;top:10vh}.card .media{min-height:300px}.card .media .inset{display:none}.card:nth-child(n){top:calc(9vh + var(--i,0)*14px)}}
+
+/* ---------- Signature horizontal ---------- */
+.signature{background:var(--ink);color:var(--ivory);overflow:hidden}
+.sig-pin{height:100svh;display:flex;align-items:center}
+.sig-track{display:flex;gap:clamp(16px,2vw,32px);padding:0 var(--pad);align-items:center;will-change:transform}
+.sig-intro{flex:0 0 min(520px,82vw);padding-right:clamp(10px,4vw,60px)}
+.sig-intro .eyebrow{color:var(--gold);margin-bottom:22px}
+.sig-intro h2{font-size:clamp(46px,6vw,100px);font-weight:300}
+.sig-intro h2 em{color:var(--gold)}
+.sig-intro p{color:var(--muted-dark);margin:26px 0 0;max-width:400px}
+.sig-item{flex:0 0 auto;margin:0;position:relative}
+.sig-item .ph{overflow:hidden;border-radius:2px;background:#222}
+.sig-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.4s var(--ease)}
+.sig-item:hover img{transform:scale(1)}
+.sig-item figcaption{display:flex;justify-content:space-between;gap:20px;margin-top:14px;font-size:13px;color:var(--muted-dark);letter-spacing:.04em}
+.sig-item figcaption b{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--ivory);letter-spacing:0}
+.s-tall .ph{width:clamp(250px,26vw,420px);height:min(66vh,620px)}
+.s-sq .ph{width:clamp(250px,30vw,480px);height:min(48vh,460px)}
+.s-low{align-self:flex-end;margin-bottom:6vh}
+.s-high{align-self:flex-start;margin-top:12vh}
+.sig-end{flex:0 0 min(420px,80vw);display:flex;flex-direction:column;gap:22px;padding:0 4vw}
+.sig-end p{font-family:var(--serif);font-size:clamp(28px,2.6vw,42px);line-height:1.15;margin:0;font-weight:300}
+.sig-progress{position:absolute;left:var(--pad);right:var(--pad);bottom:34px;height:1px;background:rgba(244,238,227,.14)}
+.sig-progress i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+@media (max-width:900px),(prefers-reduced-motion:reduce){
+  .sig-pin{height:auto;display:block;padding:90px 0 70px}
+  .sig-track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:10px}
+  .sig-track::-webkit-scrollbar{display:none}
+  .sig-item,.sig-intro,.sig-end{scroll-snap-align:start}
+  .s-low,.s-high{align-self:center;margin:0}
+  .s-tall .ph{width:72vw;height:96vw;max-height:520px}
+  .s-sq .ph{width:78vw;height:78vw;max-height:460px}
+  .sig-progress{display:none}
+}
+
+/* ---------- Live cooking ---------- */
+.live{position:relative;padding:clamp(100px,13vw,190px) 0;background:var(--ivory)}
+.live-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,7vw,120px);align-items:center}
+.live-imgs{position:relative;padding:0 14% 16% 0}
+.live .m1{aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+.live .m1 img{width:100%;height:112%;margin-top:-6%;object-fit:cover}
+.live .m2{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:4/3;overflow:hidden;border-radius:2px;border:8px solid var(--ivory);box-sizing:content-box}
+.live .m2 img{width:100%;height:100%;object-fit:cover}
+.live .eyebrow{color:var(--gold-deep);margin-bottom:22px}
+.live h2{font-size:clamp(46px,6.4vw,110px);font-weight:300}
+.live h2 em{color:var(--gold-deep)}
+.live blockquote{margin:30px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,30px);line-height:1.3;color:var(--green);border-left:1px solid var(--gold);padding-left:24px}
+.live .txt p{color:var(--muted-light);max-width:480px;margin:26px 0 34px}
+.reveal-clip{position:relative}
+.reveal-clip::after{content:"";position:absolute;inset:0;background:var(--ivory);transform-origin:top;transition:transform 1.6s var(--ease);z-index:2}
+.reveal-clip.in::after{transform:scaleY(0)}
+@media (max-width:900px){.live-grid{grid-template-columns:1fr}.live-imgs{padding:0 10% 18% 0}}
+
+/* ---------- Formats list ---------- */
+.formats{background:var(--ivory-2);padding:clamp(90px,11vw,160px) 0;position:relative}
+.formats .eyebrow{color:var(--gold-deep);margin-bottom:22px}
+.flist{list-style:none;margin:0;padding:0;border-top:1px solid rgba(18,17,16,.18)}
+.flist .fitem{border-bottom:1px solid rgba(18,17,16,.18)}
+.frow{width:100%;display:grid;grid-template-columns:70px 1fr 44px;gap:20px;align-items:center;padding:clamp(18px,2.4vw,30px) 0;background:none;border:0;text-align:left;cursor:pointer;color:var(--ink)}
+.frow .n{font-size:12px;letter-spacing:.2em;color:var(--gold-deep)}
+.frow .t{font-family:var(--serif);font-size:clamp(30px,4.4vw,68px);font-weight:300;line-height:1.05;transition:color .5s,transform .7s var(--ease)}
+.frow:hover .t{color:var(--green);transform:translateX(10px)}
+.plus{position:relative;width:44px;height:44px;border:1px solid rgba(18,17,16,.25);border-radius:50%;transition:background .5s,border-color .5s}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .6s var(--ease)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.open .plus{background:var(--ink);border-color:var(--ink)}
+.open .plus::before,.open .plus::after{background:var(--ivory)}
+.open .plus::after{transform:translate(-50%,-50%) rotate(0deg)}
+.fpanel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .8s var(--ease)}
+.open .fpanel{grid-template-rows:1fr}
+.fin{overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,4vw,64px);align-items:center;padding-left:90px}
+.open .fin{padding-bottom:clamp(24px,3vw,40px)}
+.fimg{aspect-ratio:16/10;overflow:hidden;border-radius:2px}
+.fimg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.4s var(--ease)}
+.open .fimg img{transform:scale(1)}
+.ftxt p{margin:0 0 22px;color:var(--muted-light);font-size:clamp(16px,1.2vw,19px);max-width:460px;opacity:0;transform:translateY(12px);transition:opacity .8s var(--ease) .15s,transform .8s var(--ease) .15s}
+.open .ftxt p{opacity:1;transform:none}
+.flink{font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:10px 0;display:inline-block}
+@media (max-width:760px){.frow{grid-template-columns:36px 1fr 44px;gap:12px}.fin{grid-template-columns:1fr;padding-left:0}}
+
+/* ---------- Maison ---------- */
+.maison{background:var(--ink);color:var(--ivory);padding:clamp(100px,12vw,180px) 0;overflow:hidden}
+.maison .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,48px);align-items:start}
+.maison .portrait{grid-column:1/6;position:sticky;top:12vh;aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+.maison .portrait img{position:absolute;left:0;top:-7%;width:100%;height:114%;object-fit:cover;object-position:top;filter:grayscale(1) contrast(1.05)}
+.maison .portrait figcaption{position:absolute;left:20px;bottom:18px;font-family:var(--serif);font-style:italic;font-size:22px}
+.maison .story{grid-column:7/13}
+.maison .eyebrow{color:var(--gold);margin-bottom:22px}
+.maison h2{font-size:clamp(44px,5.6vw,92px);font-weight:300}
+.maison h2 em{color:var(--gold)}
+.maison .lead{color:#CFC7B8;font-size:clamp(16px,1.25vw,19px);margin:30px 0 60px;max-width:520px}
+.tlw{position:relative}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tlw::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(196,162,106,.25)}
+.tlw .prog{position:absolute;left:0;top:8px;width:1px;height:0;background:var(--gold)}
+.tl li{position:relative;padding:0 0 46px 44px}
+.tl li::before{content:"";position:absolute;left:-4px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--ink);border:1px solid var(--gold)}
+.tl b{font-family:var(--serif);font-weight:400;font-size:clamp(38px,3.4vw,54px);color:var(--gold);line-height:1;display:block}
+.tl strong{display:block;margin:12px 0 6px;font-weight:600;letter-spacing:.02em}
+.tl span{color:var(--muted-dark)}
+@media (max-width:900px){.maison .portrait{grid-column:1/13;position:relative;top:0;aspect-ratio:4/4.4}.maison .story{grid-column:1/13}}
+
+/* ---------- Lieux ---------- */
+.lieux{background:var(--ivory);padding:clamp(100px,12vw,170px) 0 clamp(80px,10vw,140px);overflow:hidden}
+.lieux .eyebrow{color:var(--gold-deep);margin-bottom:22px}
+.lieux .sec-head p{color:var(--muted-light)}
+.lieux .sec-head h2 em{color:var(--gold-deep)}
+.drag{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;padding:0 var(--pad) 18px;scroll-snap-type:x proximity;cursor:grab;scrollbar-width:none}
+.drag::-webkit-scrollbar{display:none}
+.drag.down{cursor:grabbing;scroll-snap-type:none}
+.venue{flex:0 0 auto;width:clamp(260px,28vw,440px);margin:0;scroll-snap-align:start;user-select:none}
+.venue:nth-child(even){margin-top:clamp(30px,5vw,80px)}
+.venue .ph{aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+.venue img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);pointer-events:none}
+.venue:hover img{transform:scale(1.06)}
+.venue figcaption{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.venue figcaption b{font-family:var(--serif);font-weight:400;font-size:24px}
+.venue figcaption span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-light)}
+.drag-hint{display:flex;align-items:center;gap:14px;margin-top:26px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-light)}
+.drag-hint i{display:block;width:60px;height:1px;background:var(--gold-deep)}
+
+/* ---------- Méthode ---------- */
+.methode{background:var(--green);color:var(--ivory);padding:clamp(100px,12vw,170px) 0}
+.methode .eyebrow{color:var(--gold);margin-bottom:22px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,48px);list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{border-top:1px solid rgba(244,238,227,.2);padding-top:28px;position:relative}
+.steps li::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease)}
+.steps li.in::before{transform:scaleX(1)}
+.steps b{font-family:var(--serif);font-weight:300;font-size:clamp(54px,5vw,84px);color:var(--gold);line-height:1;display:block}
+.steps strong{display:block;margin:18px 0 8px;font-size:18px;font-weight:600}
+.steps span{color:var(--muted-green);font-size:15px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ---------- Confiance ---------- */
+.trust{background:var(--ivory);padding:clamp(80px,10vw,140px) 0 clamp(70px,9vw,120px);overflow:hidden}
+.trust-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,90px);align-items:center}
+.google{display:flex;flex-direction:column;gap:14px}
+.google .score{font-family:var(--serif);font-weight:300;font-size:clamp(90px,12vw,190px);line-height:.9}
+.google .score sup{font-size:.28em;color:var(--gold-deep);vertical-align:top;margin-left:8px}
+.google .stars{color:var(--gold-deep);letter-spacing:.2em;font-size:20px}
+.google p{margin:0;color:var(--muted-light);max-width:380px}
+.google a{font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:10px 0;align-self:flex-start}
+.trust .eyebrow{color:var(--gold-deep)}
+.logos{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.logos li{flex:0 0 calc((100% - 30px)/4);background:#fff;border-radius:3px;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:4% 5%}
+.logos img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+@media (max-width:520px){.logos{gap:6px}.logos li{flex-basis:calc((100% - 12px)/3)}}
+@media (max-width:900px){.trust-grid{grid-template-columns:1fr}}
+
+/* ---------- Devis ---------- */
+.devis{position:relative;background:var(--ink);color:var(--ivory);overflow:hidden}
+.devis-bg{position:absolute;inset:0}
+.devis-bg img{width:100%;height:100%;object-fit:cover;opacity:.32}
+.devis-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 30%,rgba(18,17,16,.6))}
+.devis .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(36px,6vw,110px);padding-top:clamp(100px,12vw,170px);padding-bottom:clamp(100px,12vw,170px)}
+.devis .eyebrow{color:var(--gold);margin-bottom:22px}
+.devis h2{font-size:clamp(46px,6vw,100px);font-weight:300}
+.devis h2 em{color:var(--gold)}
+.devis .intro p{color:#CFC7B8;max-width:420px;margin:28px 0}
+.contact-lines{display:flex;flex-direction:column;gap:6px;font-size:15px}
+.contact-lines a{text-decoration:none;color:var(--ivory);font-family:var(--serif);font-size:clamp(24px,2.2vw,32px)}
+.contact-lines a:hover{color:var(--gold)}
+.contact-lines span{color:var(--muted-dark)}
+.form{background:rgba(244,238,227,.04);border:1px solid rgba(244,238,227,.14);border-radius:4px;padding:clamp(24px,3.4vw,48px);backdrop-filter:blur(6px)}
+.fsteps{display:flex;gap:8px;margin-bottom:30px}
+.fsteps i{flex:1;height:2px;background:rgba(244,238,227,.15);position:relative;overflow:hidden}
+.fsteps i::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.fsteps i.on::after{transform:scaleX(1)}
+.fstep{display:none}
+.fstep.on{display:block;animation:stepIn .7s var(--ease)}
+@keyframes stepIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.fstep legend,.fstep h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,36px);font-weight:400;margin:0 0 22px;padding:0}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.choice span{display:flex;flex-direction:column;gap:2px;border:1px solid rgba(244,238,227,.22);border-radius:3px;padding:16px 18px;min-height:64px;transition:border-color .4s,background .4s}
+.choice span b{font-weight:600;font-size:15px}
+.choice span small{color:var(--muted-dark);font-size:12.5px}
+.choice input:checked+span{border-color:var(--gold);background:rgba(196,162,106,.12)}
+.choice input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);font-weight:600}
+.field input,.field select,.field textarea{font:inherit;color:var(--ivory);background:transparent;border:0;border-bottom:1px solid rgba(244,238,227,.3);padding:10px 0;min-height:46px;border-radius:0;transition:border-color .4s}
+.field select option{color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field textarea{resize:vertical;min-height:90px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted-dark);margin-top:22px}
+.consent input{width:20px;height:20px;accent-color:var(--gold);margin-top:1px;flex:0 0 auto}
+.fnav{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:32px}
+.back{background:none;border:0;color:var(--muted-dark);cursor:pointer;font-size:13px;letter-spacing:.14em;text-transform:uppercase;min-height:44px;padding:0 4px}
+.back:hover{color:var(--ivory)}
+.err{color:#E8B4A0;font-size:13px;margin-top:14px;min-height:20px}
+.done{text-align:left}
+.done .check{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:24px}
+.done p{color:#CFC7B8}
+@media (max-width:900px){.devis .wrap{grid-template-columns:1fr}.devis-bg::after{background:linear-gradient(180deg,var(--ink) 20%,rgba(18,17,16,.75))}}
+@media (max-width:520px){.choices,.fields{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--ink);color:var(--muted-dark);border-top:1px solid #2A2723;padding:clamp(70px,8vw,110px) 0 30px;font-size:14px}
+.foot .big{font-family:var(--serif);font-weight:300;color:var(--ivory);font-size:clamp(48px,10vw,170px);line-height:.9;letter-spacing:-.02em;margin:0 0 clamp(50px,6vw,90px)}
+.foot .big em{color:var(--gold)}
+.fcols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+.fcols h4{font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:0 0 16px;font-weight:600}
+.fcols a{color:var(--ivory);text-decoration:none;display:inline-block;padding:3px 0}
+.fcols a:hover{color:var(--gold)}
+.fcols p{margin:0}
+.fcols img{height:64px;width:auto;margin-bottom:18px}
+.legal{margin-top:60px;padding-top:24px;border-top:1px solid #2A2723;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 30px;font-size:12.5px}
+.legal a{color:var(--muted-dark);text-decoration:none;margin-right:22px}
+.legal a:hover{color:var(--ivory)}
+@media (max-width:900px){.fcols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fcols{grid-template-columns:1fr}}
+
+/* ---------- Sticky mobile CTA ---------- */
+.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:80;display:none;gap:8px;padding:8px;background:rgba(18,17,16,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(244,238,227,.12);border-radius:999px;transform:translateY(140%);transition:transform .7s var(--ease)}
+.mcta.on{transform:none}
+.mcta a{flex:1;min-height:48px;font-size:12px;padding:0 14px}
+@media (max-width:760px){.mcta{display:flex}.foot{padding-bottom:100px}.slide:first-child img{object-position:68% 50%}}
+
+/* ---------- Reveal ---------- */
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .loader{display:none}
+  .js .rv,.line>span,.hero .eyebrow,.fade-up{opacity:1!important;transform:none!important}
+  .manifesto .big .w{opacity:1!important}
+  .reveal-clip::after{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<div class="loader" aria-hidden="true"><img src="img/logo.png" alt=""><div class="bar"><i></i></div></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cuisine Création Traiteur, accueil">
+      <img src="img/logo.png" alt="">
+      <span>Cuisine Création<small>TRAITEUR · DEPUIS 2006</small></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#univers">Réceptions</a>
+      <a href="#signature">Savoir-faire</a>
+      <a href="#maison">La Maison</a>
+      <a href="#lieux">Lieux</a>
+      <a href="#methode">Méthode</a>
+    </nav>
+    <a class="btn btn-gold btn-desk" href="#devis">Demander un devis</a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <ol>
+    <li><a class="big" href="#univers"><sup>01</sup>Réceptions</a></li>
+    <li><a class="big" href="#signature"><sup>02</sup>Savoir-faire</a></li>
+    <li><a class="big" href="#maison"><sup>03</sup>La Maison</a></li>
+    <li><a class="big" href="#lieux"><sup>04</sup>Lieux</a></li>
+    <li><a class="big" href="#devis"><sup>05</sup>Devis</a></li>
+  </ol>
+  <div class="mfoot">
+    <a href="tel:+33382894450">+33 3 82 89 44 50</a>
+    <a href="mailto:byc@cuisinecreation-traiteur.com">byc@cuisinecreation-traiteur.com</a>
+    <span>Cosnes-et-Romain · Grand Est · Luxembourg · Belgique</span>
+  </div>
+</div>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top" aria-label="Présentation">
+  <div class="slides">
+    <div class="slide on"><img src="img/hero-flamme.webp" alt="Un chef fait sauter une préparation à la flamme"></div>
+    <div class="slide"><img src="img/hero-gala.webp" alt="Salle de réception dressée pour un dîner de gala"></div>
+    <div class="slide"><img src="img/hero-grange.webp" alt="Grange illuminée dressée pour un mariage"></div>
+    <div class="slide"><img src="img/pieces-cocktail.webp" alt="Pièces cocktail dressées en série"></div>
+  </div>
+  <div class="hero-index" role="tablist" aria-label="Images d’ambiance">
+    <button type="button" class="on" data-i="0"><span>Live cooking</span><i></i></button>
+    <button type="button" data-i="1"><span>Galas</span><i></i></button>
+    <button type="button" data-i="2"><span>Mariages</span><i></i></button>
+    <button type="button" data-i="3"><span>Cocktails</span><i></i></button>
+  </div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Traiteur organisateur de réception · depuis 2006</p>
+    <h1><span class="line"><span>L’art de</span></span><span class="line"><span><em>recevoir,</em></span></span><span class="line"><span>en grand.</span></span></h1>
+    <div class="hero-meta fade-up">
+      <p>Galas, séminaires, mariages et réceptions privées : une cuisine de saison, préparée sous les yeux de vos invités, en Grand Est, au Luxembourg et en Belgique.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#devis">Composer mon événement <span class="arr">→</span></a>
+        <a class="btn btn-line" href="#univers">Découvrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Dîners de gala</span><span>Cérémonies</span><span>Séminaires</span><span>Mariages</span><span>Cocktails dînatoires</span><span>Live cooking</span><span>Chef à domicile</span><span>Walking dinner</span>
+    <span>Dîners de gala</span><span>Cérémonies</span><span>Séminaires</span><span>Mariages</span><span>Cocktails dînatoires</span><span>Live cooking</span><span>Chef à domicile</span><span>Walking dinner</span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto" aria-label="Notre philosophie">
+  <div class="wrap">
+    <p class="eyebrow">Un secret de famille</p>
+    <p class="big" id="mani">Chaque réception raconte une histoire. Depuis 2006, nous l’écrivons avec des <em>produits frais de saison</em>, un service attentif et le goût juste, pour que vos invités s’en souviennent longtemps.</p>
+    <p class="signline"><span>Entreprise familiale depuis 2006</span><i aria-hidden="true"></i><span>France · Luxembourg · Belgique</span></p>
+  </div>
+</section>
+
+<!-- UNIVERS -->
+<section class="univers" id="univers">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Nos réceptions</p><h2 class="rv">Quatre façons de <em>recevoir</em></h2></div>
+      <p class="rv">Du grand cocktail d’entreprise au dîner à deux, la même exigence : un menu sur mesure, une équipe dédiée, et rien à gérer de votre côté.</p>
+    </div>
+    <div class="cards">
+      <article class="card" style="--i:0">
+        <div class="media"><img src="img/hero-gala.webp" alt="Salle dressée pour un dîner d’entreprise" data-par><div class="inset"><img src="img/gala-desserts.webp" alt="Desserts dressés en série pour un gala"></div></div>
+        <div class="body">
+          <span class="num">01 — ENTREPRISES</span>
+          <div><h3>Galas &amp; <em>cérémonies</em></h3><p style="margin-top:22px">Soirées de gala, inaugurations, séminaires, cocktails, repas d’affaires. Une organisation millimétrée, des produits issus de fournisseurs sélectionnés et un chef dédié à votre réception.</p></div>
+          <ul class="tags"><li>Galas</li><li>Séminaires</li><li>Inaugurations</li><li>Cocktails</li><li>Repas d’affaires</li></ul>
+          <a class="lnk" href="#devis">Organiser une réception pro <i></i></a>
+        </div>
+      </article>
+      <article class="card" style="--i:1">
+        <div class="media"><img src="img/mariage-table.webp" alt="Table de mariage aux bougies et fleurs rouges" data-par><div class="inset"><img src="img/grange-lumieres.webp" alt="Grange de mariage sous guirlandes lumineuses"></div></div>
+        <div class="body">
+          <span class="num">02 — MARIAGES</span>
+          <div><h3>Le plus beau <em>des jours</em></h3><p style="margin-top:22px">Grand banquet ou réception intimiste, champêtre ou contemporain, à l’assiette ou en buffet. Show cooking au vin d’honneur, art de la table, et ce soin du détail… jusqu’à l’après-gâteau.</p></div>
+          <ul class="tags"><li>Vin d’honneur</li><li>Dîner à l’assiette</li><li>Brunch du lendemain</li></ul>
+          <a class="lnk" href="#devis">Préparer mon mariage <i></i></a>
+        </div>
+      </article>
+      <article class="card" style="--i:2">
+        <div class="media"><img src="img/assiette-viande.webp" alt="Assiette de viande dressée sur nappe rose" data-par></div>
+        <div class="body">
+          <span class="num">03 — RÉCEPTIONS PRIVÉES</span>
+          <div><h3>Vos moments <em>de famille</em></h3><p style="margin-top:22px">Anniversaires, baptêmes, communions, cousinades. Nous nous occupons de tout pour que vous profitiez de votre événement en toute sérénité.</p></div>
+          <ul class="tags"><li>Anniversaires</li><li>Baptêmes</li><li>Communions</li><li>Cousinades</li></ul>
+          <a class="lnk" href="#devis">Organiser ma réception <i></i></a>
+        </div>
+      </article>
+      <article class="card" style="--i:3">
+        <div class="media"><img src="img/service-assiette.webp" alt="Service à l’assiette avec sauce versée en salle" data-par></div>
+        <div class="body">
+          <span class="num">04 — CHEF À DOMICILE</span>
+          <div><h3>Le restaurant, <em>chez vous</em></h3><p style="margin-top:22px">Dîner en amoureux, repas de famille ou réception à la maison : un chef se déplace et compose un menu selon vos envies, à partir de produits frais et de saison.</p></div>
+          <ul class="tags"><li>Dîner à deux</li><li>Repas de famille</li><li>Menu sur mesure</li></ul>
+          <a class="lnk" href="#devis">Réserver un chef <i></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE (horizontal) -->
+<section class="signature" id="signature" aria-label="Notre savoir-faire en images">
+  <div class="sig-pin">
+    <div class="sig-track">
+      <div class="sig-intro">
+        <p class="eyebrow">Savoir-faire</p>
+        <h2>La précision <em>du geste</em>, à grande échelle.</h2>
+        <p>Cent assiettes identiques, mille pièces cocktail parfaites. C’est là que se joue la différence d’un grand traiteur.</p>
+      </div>
+      <figure class="sig-item s-tall s-high"><div class="ph"><img src="img/gala-desserts.webp" alt="Desserts alignés pour un dîner de gala" loading="lazy"></div><figcaption><b>Dîner de gala</b></figcaption></figure>
+      <figure class="sig-item s-sq s-low"><div class="ph"><img src="img/pieces-cocktail.webp" alt="Pièces cocktail salées sur plateaux" loading="lazy"></div><figcaption><b>Cocktail</b></figcaption></figure>
+      <figure class="sig-item s-tall"><div class="ph"><img src="img/tartelettes.webp" alt="Tartelettes au foie gras alignées" loading="lazy"></div><figcaption><b>Mises en bouche</b></figcaption></figure>
+      <figure class="sig-item s-tall s-low"><div class="ph"><img src="img/saumon-entree.webp" alt="Entrées de saumon en série" loading="lazy"></div><figcaption><b>Service à l’assiette</b></figcaption></figure>
+      <figure class="sig-item s-sq s-high"><div class="ph"><img src="img/ceviche-dressage.webp" alt="Dressage en direct de ceviches" loading="lazy"></div><figcaption><b>Dressage minute</b></figcaption></figure>
+      <figure class="sig-item s-tall"><div class="ph"><img src="img/bouchees-saumon.webp" alt="Bouchées au saumon sur caisse de vin" loading="lazy"></div><figcaption><b>Mise en scène</b></figcaption></figure>
+      <figure class="sig-item s-tall s-low"><div class="ph"><img src="img/charcuterie.webp" alt="Buffet de charcuterie sur présentoirs en bois" loading="lazy"></div><figcaption><b>Buffet</b></figcaption></figure>
+      <div class="sig-end"><p>Chaque pièce est préparée avec le même soin, qu’il y en ait <em style="color:var(--gold)">dix ou mille.</em></p><a class="btn btn-gold" href="#devis" style="align-self:flex-start">Parlons de votre projet <span class="arr">→</span></a></div>
+    </div>
+  </div>
+  <div class="sig-progress" aria-hidden="true"><i></i></div>
+</section>
+
+<!-- LIVE COOKING -->
+<section class="live" id="live" aria-label="Live cooking">
+  <div class="wrap">
+    <div class="live-grid">
+      <div class="live-imgs">
+        <div class="m1 reveal-clip"><img src="img/live-brochettes.webp" alt="Chef en live cooking servant des brochettes" data-par></div>
+        <div class="m2 reveal-clip"><img src="img/ceviche-dressage.webp" alt="Mains dressant des ceviches en direct"></div>
+      </div>
+      <div class="txt rv">
+        <p class="eyebrow">Notre signature</p>
+        <h2>Live <em>cooking</em></h2>
+        <blockquote>« Aucun secret n’est préservé, tout est cuisiné devant vous. »</blockquote>
+        <p>Nos chefs préparent vos pièces cocktail et vos amuse-bouches sous les yeux de vos invités. Fraîcheur, spectacle et convivialité : le moment dont on parle encore après la soirée.</p>
+        <a class="btn btn-ink" href="#devis">Ajouter un live cooking <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="formats" id="formats" aria-label="Nos formats">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Les formats</p><h2 class="rv">Du walking dinner <em style="color:var(--gold-deep)">au dîner placé</em></h2></div>
+      <p class="rv" style="color:var(--muted-light)">Nous vous guidons vers le format le plus adapté à votre lieu, votre nombre d’invités et le rythme de votre soirée.</p>
+    </div>
+    <ul class="flist">
+      <li class="fitem open">
+        <button class="frow" type="button" aria-expanded="true" aria-controls="fp0" id="fb0"><span class="n">01</span><span class="t">Cocktail dînatoire</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp0" role="region" aria-labelledby="fb0"><div class="fin"><div class="fimg"><img src="img/pieces-cocktail.webp" alt="Pièces cocktail salées" loading="lazy"></div><div class="ftxt"><p>Un assortiment de pièces salées et sucrées servies debout, pour laisser vos invités circuler et échanger. Idéal pour les inaugurations, les soirées d’entreprise et les vins d’honneur.</p><a href="#devis" class="flink" data-format="Cocktail dînatoire">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+      </li>
+      <li class="fitem">
+        <button class="frow" type="button" aria-expanded="false" aria-controls="fp1" id="fb1"><span class="n">02</span><span class="t">Walking dinner</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp1" role="region" aria-labelledby="fb1"><div class="fin"><div class="fimg"><img src="img/bouchees-saumon.webp" alt="Bouchées au saumon" loading="lazy"></div><div class="ftxt"><p>Des mini-plats servis en circulation tout au long de la soirée : la générosité d’un dîner, la liberté d’un cocktail.</p><a href="#devis" class="flink" data-format="Walking dinner">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+      </li>
+      <li class="fitem">
+        <button class="frow" type="button" aria-expanded="false" aria-controls="fp2" id="fb2"><span class="n">03</span><span class="t">Service à l’assiette</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp2" role="region" aria-labelledby="fb2"><div class="fin"><div class="fimg"><img src="img/service-assiette.webp" alt="Service en salle" loading="lazy"></div><div class="ftxt"><p>Un dîner placé, de l’entrée au dessert, servi en salle par nos équipes. Le format de référence pour les galas, les cérémonies et les mariages.</p><a href="#devis" class="flink" data-format="Service à l’assiette">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+      </li>
+      <li class="fitem">
+        <button class="frow" type="button" aria-expanded="false" aria-controls="fp3" id="fb3"><span class="n">04</span><span class="t">Buffet</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp3" role="region" aria-labelledby="fb3"><div class="fin"><div class="fimg"><img src="img/charcuterie.webp" alt="Buffet sur présentoirs" loading="lazy"></div><div class="ftxt"><p>Un buffet généreux, chaud ou froid, mis en scène sur nos présentoirs. Convivial, pour les grands groupes comme pour les repas de famille.</p><a href="#devis" class="flink" data-format="Buffet">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+      </li>
+      <li class="fitem">
+        <button class="frow" type="button" aria-expanded="false" aria-controls="fp4" id="fb4"><span class="n">05</span><span class="t">Garden party &amp; brunch</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp4" role="region" aria-labelledby="fb4"><div class="fin"><div class="fimg"><img src="img/table-champetre.webp" alt="Table champêtre" loading="lazy"></div><div class="ftxt"><p>Pour les beaux jours ou le lendemain d’un mariage : une table champêtre, des produits de saison et une ambiance détendue.</p><a href="#devis" class="flink" data-format="Garden party & brunch">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- MAISON -->
+<section class="maison" id="maison" aria-label="La Maison">
+  <div class="wrap">
+    <div class="grid">
+      <figure class="portrait" style="margin:0"><img src="img/fondateurs.webp" alt="Arthur et Loïc, Cuisine Création Traiteur" data-par loading="lazy"><figcaption>Arthur &amp; Loïc</figcaption></figure>
+      <div class="story">
+        <p class="eyebrow">La Maison</p>
+        <h2 class="rv">Une histoire <em>de famille</em></h2>
+        <p class="lead rv">Arthur et Loïc accompagnent chaque détail de votre événement avec passion. Le talent de toute l’équipe est dédié à un seul objectif : donner vie à vos envies les plus raffinées.</p>
+        <div class="tlw"><span class="prog" aria-hidden="true"></span><ol class="tl">
+          <li class="rv"><b>2006</b><strong>Le commencement</strong><span>Originaire de Savoie, Loïc crée un restaurant traditionnel savoyard dédié à sa région natale.</span></li>
+          <li class="rv"><b>2010</b><strong>Nouveaux services</strong><span>Face à une demande croissante : chef à domicile, service traiteur et restauration collective.</span></li>
+          <li class="rv"><b>2017</b><strong>Une histoire de famille</strong><span>Arthur rejoint l’aventure et la maison devient organisateur de réception.</span></li>
+          <li class="rv"><b>Aujourd’hui</b><strong>Grand Est, Luxembourg, Belgique</strong><span>Une clientèle fidèle de particuliers et d’entreprises, de Longwy à Metz, Nancy, Thionville et Verdun.</span></li>
+        </ol></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIEUX -->
+<section class="lieux" id="lieux" aria-label="Lieux de réception">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Lieux inoubliables</p><h2 class="rv">Des lieux <em>d’exception</em></h2></div>
+      <p class="rv">Le choix du lieu compte autant que celui du traiteur. Nous travaillons avec des domaines et des salles sélectionnés : une seule demande, et nous vous répondons ensemble.</p>
+    </div>
+  </div>
+  <div class="drag" tabindex="0" aria-label="Galerie de lieux, faites défiler horizontalement">
+    <figure class="venue"><div class="ph"><img src="img/chateau-parc.webp" alt="Château et son parc" loading="lazy"></div><figcaption><b>Château</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img src="img/grange-salle.webp" alt="Grande salle sous charpente dressée pour un mariage" loading="lazy"></div><figcaption><b>Grange</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img src="img/orangerie-thonne.webp" alt="Orangerie de Thonne-les-Prés dressée pour une réception" loading="lazy"></div><figcaption><b>Orangerie</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img src="img/chateau-chapelle.webp" alt="Château et sa chapelle" loading="lazy"></div><figcaption><b>Domaine</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img src="img/chateau-thonne.webp" alt="Façade du château de Thonne-les-Prés" loading="lazy"></div><figcaption><b>Château</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img src="img/loft-industriel.webp" alt="Loft industriel à mezzanine" loading="lazy"></div><figcaption><b>Loft</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img src="img/cour-grange.webp" alt="Cour de ferme en pierre aménagée pour un cocktail" loading="lazy"></div><figcaption><b>Cour de ferme</b></figcaption></figure>
+  </div>
+  <div class="wrap"><p class="drag-hint" aria-hidden="true"><i></i>Glisser pour explorer</p></div>
+</section>
+
+<!-- METHODE -->
+<section class="methode" id="methode" aria-label="Notre méthode">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Méthode</p><h2 class="rv" style="color:var(--ivory)">Du premier échange <em>au dernier toast</em></h2></div>
+      <p class="rv">Un interlocuteur unique, de la conception à la réalisation, dans les délais les plus adaptés.</p>
+    </div>
+    <ol class="steps">
+      <li class="rv"><b>01</b><strong>Votre projet</strong><span>Vous nous décrivez l’événement : date, invités, lieu, envies.</span></li>
+      <li class="rv"><b>02</b><strong>Proposition sur mesure</strong><span>Menu et devis composés pour vous, ajustés ensemble.</span></li>
+      <li class="rv"><b>03</b><strong>Organisation</strong><span>Lieu, art de la table, service, animations culinaires : tout est orchestré.</span></li>
+      <li class="rv"><b>04</b><strong>Le jour J</strong><span>Nos équipes s’occupent de tout. Vous profitez.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONFIANCE -->
+<section class="trust" aria-label="Ils nous font confiance">
+  <div class="wrap trust-grid">
+    <div class="google rv">
+      <p class="eyebrow">Avis clients</p>
+      <div class="score">5,0<sup>/5</sup></div>
+      <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+      <p>La note attribuée par 91 clients sur Google. Particuliers comme entreprises, ils recommandent la maison.</p>
+      <a href="https://www.google.com/maps/search/Cuisine+Cr%C3%A9ation+Traiteur+Cosnes-et-Romain">Lire les avis sur Google →</a>
+    </div>
+    <div class="rv">
+      <p class="eyebrow">Ils nous font confiance</p>
+      <ul class="logos"><li><img src="img/logos/societe-generale.png" alt="Société Générale" loading="lazy"></li><li><img src="img/logos/credit-agricole.png" alt="Crédit Agricole" loading="lazy"></li><li><img src="img/logos/bmw.png" alt="BMW" loading="lazy"></li><li><img src="img/logos/ford.png" alt="Ford" loading="lazy"></li><li><img src="img/logos/hyundai.png" alt="Hyundai" loading="lazy"></li><li><img src="img/logos/husqvarna.png" alt="Husqvarna" loading="lazy"></li><li><img src="img/logos/auchan.png" alt="Auchan" loading="lazy"></li><li><img src="img/logos/douanes.png" alt="Douanes &amp; Droits indirects" loading="lazy"></li><li><img src="img/logos/ville-longwy.png" alt="Ville de Longwy" loading="lazy"></li><li><img src="img/logos/cigl-rumelange.png" alt="CIGL Rumelange" loading="lazy"></li><li><img src="img/logos/cigl-kalteiteng.png" alt="CIGL Kälteiteng" loading="lazy"></li><li><img src="img/logos/cafpi.png" alt="CAFPI" loading="lazy"></li><li><img src="img/logos/cbc.png" alt="CBC Computer Business Center" loading="lazy"></li><li><img src="img/logos/ouilab.png" alt="Oui Lab" loading="lazy"></li><li><img src="img/logos/hifi-international.png" alt="HiFi International" loading="lazy"></li><li><img src="img/logos/ntk.png" alt="NTK" loading="lazy"></li><li><img src="img/logos/atm.png" alt="ATM" loading="lazy"></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section class="devis" id="devis" aria-label="Demande de devis">
+  <div class="devis-bg"><img src="img/epices-ardoise.webp" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Demande de devis</p>
+      <h2 class="rv">Composons votre <em>événement</em></h2>
+      <p>Trois étapes, deux minutes. Nous revenons vers vous avec une proposition personnalisée.</p>
+      <div class="contact-lines">
+        <span>Vous préférez en parler ?</span>
+        <a href="tel:+33382894450">+33 3 82 89 44 50</a>
+        <a href="mailto:byc@cuisinecreation-traiteur.com" style="font-size:clamp(18px,1.6vw,22px)">byc@cuisinecreation-traiteur.com</a>
+        <span style="margin-top:8px">Bureau du mardi au vendredi · 9 h–12 h · 13 h–18 h</span>
+      </div>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div class="fsteps" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <div class="fstep on" data-step="0">
+        <fieldset>
+          <legend>Quel événement préparez-vous ?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="type" value="Gala / cérémonie"><span><b>Gala / cérémonie</b><small>Entreprise, institution</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Séminaire / cocktail"><span><b>Séminaire / cocktail</b><small>Inauguration, repas d’affaires</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Mariage"><span><b>Mariage</b><small>Vin d’honneur, dîner, brunch</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Réception privée"><span><b>Réception privée</b><small>Anniversaire, baptême…</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Chef à domicile"><span><b>Chef à domicile</b><small>Dîner chez vous</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Association"><span><b>Association</b><small>Repas, soirée à thème</small></span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="fstep" data-step="1">
+        <h3>Les grandes lignes</h3>
+        <div class="fields">
+          <div class="field"><label for="f-date">Date</label><input id="f-date" type="date"></div>
+          <div class="field"><label for="f-guests">Nombre d’invités</label><input id="f-guests" type="number" min="1" inputmode="numeric" placeholder="ex. 120"></div>
+          <div class="field"><label for="f-place">Lieu ou ville</label><input id="f-place" type="text" placeholder="ex. Luxembourg, Metz…"></div>
+          <div class="field"><label for="f-format">Format souhaité</label><select id="f-format"><option value="">À définir ensemble</option><option>Cocktail dînatoire</option><option>Walking dinner</option><option>Service à l’assiette</option><option>Buffet</option><option>Garden party / brunch</option></select></div>
+          <div class="field full"><label for="f-msg">Vos envies (facultatif)</label><textarea id="f-msg" placeholder="Ambiance, live cooking, régimes alimentaires…"></textarea></div>
+        </div>
+      </div>
+      <div class="fstep" data-step="2">
+        <h3>Vos coordonnées</h3>
+        <div class="fields">
+          <div class="field"><label for="f-name">Nom et prénom</label><input id="f-name" type="text" autocomplete="name"></div>
+          <div class="field"><label for="f-company">Société (facultatif)</label><input id="f-company" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel" autocomplete="tel"></div>
+        </div>
+        <label class="consent"><input type="checkbox" id="f-ok">J’accepte que mes informations soient utilisées pour traiter ma demande, conformément à la politique de confidentialité.</label>
+      </div>
+      <div class="fstep done" data-step="3">
+        <div class="check" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
+        <h3>Merci, c’est noté.</h3>
+        <p id="recap">Votre demande est prête. (Maquette : l’envoi sera branché lors de la mise en production.)</p>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <div class="fnav">
+        <button type="button" class="back" id="back" hidden>← Retour</button>
+        <button type="button" class="btn btn-gold" id="next" style="margin-left:auto">Continuer <span class="arr">→</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="big">Recevoir <em>avec goût.</em></p>
+    <div class="fcols">
+      <div><img src="img/logo.png" alt="Cuisine Création Traiteur"><p>Traiteur organisateur de réception depuis 2006. Grand Est, Luxembourg, Belgique.</p></div>
+      <div><h4>Nous trouver</h4><p>57 rue du Béarn<br>54400 Cosnes-et-Romain</p></div>
+      <div><h4>Contact</h4><a href="tel:+33382894450">+33 3 82 89 44 50</a><br><a href="mailto:byc@cuisinecreation-traiteur.com">byc@cuisinecreation-traiteur.com</a><p style="margin-top:10px">Mardi – vendredi<br>9 h–12 h · 13 h–18 h</p></div>
+      <div><h4>Suivre</h4><a href="https://www.instagram.com/cuisinecreationtraiteur/">Instagram</a><br><a href="https://www.facebook.com/cuisinecreationtraiteur/">Facebook</a></div>
+    </div>
+    <div class="legal"><span>© 2026 Cuisine Création Traiteur</span><span><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">Cookies</a></span></div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-line" href="tel:+33382894450">Appeler</a><a class="btn btn-gold" href="#devis">Devis</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var doc=document.documentElement; doc.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var hasGsap=typeof window.gsap!=='undefined' && typeof window.ScrollTrigger!=='undefined';
+  if(hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+  /* Loader */
+  var loader=document.querySelector('.loader');
+  function start(){ loader.classList.add('done'); setTimeout(function(){document.body.classList.add('ready');},250); }
+  if(reduce){ document.body.classList.add('ready'); } else { setTimeout(start,1500); }
+
+  /* Smooth scroll */
+  var lenis=null;
+  if(!reduce && typeof window.Lenis!=='undefined'){
+    try{
+      lenis=new Lenis({duration:1.15,smoothWheel:true});
+      if(hasGsap){ lenis.on('scroll',ScrollTrigger.update); gsap.ticker.add(function(t){lenis.raf(t*1000);}); gsap.ticker.lagSmoothing(0); }
+      else { (function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(0); }
+    }catch(e){ lenis=null; }
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href'); if(id.length<2) return;
+      var el=document.querySelector(id); if(!el) return;
+      e.preventDefault(); closeMenu();
+      if(lenis) lenis.scrollTo(el,{offset:id==='#top'?0:-10,duration:1.6}); else el.scrollIntoView({behavior:reduce?'auto':'smooth'});
+    });
+  });
+
+  /* Header */
+  var hdr=document.getElementById('hdr'), mcta=document.getElementById('mcta'), lastY=0;
+  function onScroll(){
+    var y=window.scrollY||window.pageYOffset;
+    hdr.classList.toggle('scrolled',y>40);
+    hdr.classList.toggle('hide',y>lastY && y>600 && !document.body.classList.contains('menu-open'));
+    mcta.classList.toggle('on',y>window.innerHeight*.7);
+    lastY=y;
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* Mobile menu */
+  var burger=document.querySelector('.burger'), mm=document.getElementById('mmenu');
+  function closeMenu(){ document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Ouvrir le menu'); mm.setAttribute('aria-hidden','true'); if(lenis) lenis.start(); }
+  burger.addEventListener('click',function(){
+    var open=!document.body.classList.contains('menu-open');
+    if(!open){ closeMenu(); return; }
+    document.body.classList.add('menu-open'); burger.setAttribute('aria-expanded','true'); burger.setAttribute('aria-label','Fermer le menu'); mm.setAttribute('aria-hidden','false'); if(lenis) lenis.stop();
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+
+  /* Hero slideshow */
+  var slides=[].slice.call(document.querySelectorAll('.slide')), dots=[].slice.call(document.querySelectorAll('.hero-index button')), cur=0, timer;
+  function show(i){ slides[cur].classList.remove('on'); dots[cur].classList.remove('on'); cur=i; slides[cur].classList.add('on'); dots[cur].classList.add('on'); }
+  function auto(){ clearInterval(timer); if(!reduce) timer=setInterval(function(){show((cur+1)%slides.length);},6000); }
+  dots.forEach(function(d,i){ d.addEventListener('click',function(){show(i);auto();}); });
+  auto();
+
+  /* Manifesto words */
+  var mani=document.getElementById('mani');
+  (function split(node){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){ var frag=document.createDocumentFragment(); n.textContent.split(/(\s+)/).forEach(function(w){ if(!w) return; if(/^\s+$/.test(w)){frag.appendChild(document.createTextNode(w));} else { var s=document.createElement('span'); s.className='w'; s.textContent=w; frag.appendChild(s);} }); node.replaceChild(frag,n); }
+      else if(n.nodeType===1) split(n);
+    });
+  })(mani);
+  var words=[].slice.call(mani.querySelectorAll('.w'));
+
+  /* Counters */
+  function count(el){
+    var to=parseFloat(el.dataset.count), dec=+el.dataset.dec||0, t0=null, dur=1800, from=to>1000?1950:0;
+    function step(t){ if(!t0)t0=t; var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,4), v=from+(to-from)*e; el.textContent=dec?v.toFixed(dec).replace('.',','):Math.round(v); if(p<1) requestAnimationFrame(step); }
+    if(reduce){ el.textContent=dec?to.toFixed(dec).replace('.',','):to; return; } requestAnimationFrame(step);
+  }
+
+  /* Reveal (IntersectionObserver) */
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); if(e.target.dataset.count) count(e.target); io.unobserve(e.target);} }); },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv,.reveal-clip,.steps li').forEach(function(el){ io.observe(el); });
+
+  if(hasGsap && !reduce){
+    /* Words light up */
+    gsap.to(words,{opacity:1,stagger:.05,ease:'none',scrollTrigger:{trigger:mani,start:'top 80%',end:'bottom 45%',scrub:true}});
+    /* Image inner parallax */
+    document.querySelectorAll('[data-par]').forEach(function(img){ gsap.fromTo(img,{yPercent:-5},{yPercent:5,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:true}}); });
+    /* Stacking cards scale */
+    var cards=gsap.utils.toArray('.card');
+    cards.forEach(function(c,i){ if(i===cards.length-1) return; gsap.to(c,{scale:.92,opacity:.55,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:'top 20%',scrub:true}}); });
+    /* Hero image slight zoom out on scroll */
+    gsap.to('.slides',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('.hero-inner',{opacity:0,y:-60,ease:'none',scrollTrigger:{trigger:'.hero',start:'30% top',end:'85% top',scrub:true}});
+    /* Horizontal signature (desktop only) */
+    var mm=gsap.matchMedia();
+    mm.add('(min-width: 901px)',function(){
+      var track=document.querySelector('.sig-track');
+      var dist=function(){ return track.scrollWidth-window.innerWidth; };
+      var tw=gsap.to(track,{x:function(){return -dist();},ease:'none',scrollTrigger:{trigger:'.sig-pin',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:1,invalidateOnRefresh:true,onUpdate:function(self){ gsap.set('.sig-progress i',{scaleX:self.progress}); }}});
+      gsap.utils.toArray('.sig-item img').forEach(function(img){ gsap.fromTo(img,{xPercent:-8},{xPercent:8,ease:'none',scrollTrigger:{trigger:img.closest('.sig-item'),containerAnimation:tw,start:'left right',end:'right left',scrub:true}}); });
+      return function(){ gsap.set(track,{x:0}); };
+    });
+    /* Timeline progress */
+    gsap.to('.tlw .prog',{height:'calc(100% - 16px)',ease:'none',scrollTrigger:{trigger:'.tl',start:'top 70%',end:'bottom 60%',scrub:true}});
+    /* Footer big text */
+    gsap.from('.foot .big',{yPercent:40,opacity:0,ease:'none',scrollTrigger:{trigger:'.foot',start:'top bottom',end:'top 40%',scrub:true}});
+    window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+  } else {
+    words.forEach(function(w){ w.style.opacity=1; });
+  }
+
+  /* Formats accordion */
+  var fitems=[].slice.call(document.querySelectorAll('.fitem'));
+  fitems.forEach(function(li){
+    li.querySelector('.frow').addEventListener('click',function(){
+      var wasOpen=li.classList.contains('open');
+      fitems.forEach(function(o){ o.classList.remove('open'); o.querySelector('.frow').setAttribute('aria-expanded','false'); });
+      if(!wasOpen){ li.classList.add('open'); this.setAttribute('aria-expanded','true'); }
+      if(hasGsap) setTimeout(function(){ ScrollTrigger.refresh(); },850);
+    });
+  });
+  document.querySelectorAll('.flink').forEach(function(a){ a.addEventListener('click',function(){ var sel=document.getElementById('f-format'); [].forEach.call(sel.options,function(o){ if(o.text===a.dataset.format) sel.value=o.value||o.text; }); }); });
+
+  /* Drag-to-scroll venues */
+  var drag=document.querySelector('.drag');
+  (function(){ var down=false,sx=0,sl=0,moved=false;
+    drag.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse') return; down=true; moved=false; sx=e.clientX; sl=drag.scrollLeft; drag.classList.add('down'); });
+    window.addEventListener('pointerup',function(){ down=false; drag.classList.remove('down'); });
+    drag.addEventListener('pointermove',function(e){ if(!down) return; var dx=e.clientX-sx; if(Math.abs(dx)>3) moved=true; drag.scrollLeft=sl-dx; });
+    drag.addEventListener('wheel',function(e){ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)) return; e.stopPropagation(); },{passive:true});
+    drag.setAttribute('data-lenis-prevent-horizontal','');
+  })();
+
+  /* Multi-step form (front-end only) */
+  var steps=[].slice.call(document.querySelectorAll('.fstep')), bars=[].slice.call(document.querySelectorAll('.fsteps i')), s=0;
+  var next=document.getElementById('next'), back=document.getElementById('back'), err=document.getElementById('err');
+  function go(i){
+    steps[s].classList.remove('on'); s=i; steps[s].classList.add('on');
+    bars.forEach(function(b,k){ b.classList.toggle('on',k<=Math.min(s,2)); });
+    back.hidden=(s===0||s===3); next.hidden=(s===3);
+    next.innerHTML=(s===2?'Envoyer ma demande':'Continuer')+' <span class="arr">→</span>';
+    err.textContent='';
+    var f=steps[s].querySelector('input,select,textarea'); if(f && s>0) setTimeout(function(){ try{f.focus({preventScroll:true});}catch(e){} },300);
+  }
+  function valid(){
+    if(s===0 && !document.querySelector('input[name=type]:checked')) return 'Choisissez un type d’événement.';
+    if(s===1 && !document.getElementById('f-guests').value) return 'Indiquez un nombre approximatif d’invités.';
+    if(s===2){
+      if(!document.getElementById('f-name').value.trim()) return 'Indiquez votre nom.';
+      if(!/^\S+@\S+\.\S+$/.test(document.getElementById('f-email').value)) return 'Indiquez une adresse e-mail valide.';
+      if(!document.getElementById('f-ok').checked) return 'Merci d’accepter le traitement de vos données.';
+    }
+    return '';
+  }
+  next.addEventListener('click',function(){
+    var m=valid(); if(m){ err.textContent=m; return; }
+    if(s===2){
+      var t=document.querySelector('input[name=type]:checked').value, g=document.getElementById('f-guests').value, n=document.getElementById('f-name').value.trim().split(' ')[0];
+      document.getElementById('recap').textContent='Merci '+n+'. Votre demande « '+t+' » pour '+g+' invités est prête. Version de démonstration : l’envoi sera activé à la mise en ligne.';
+    }
+    go(s+1);
+  });
+  back.addEventListener('click',function(){ go(s-1); });
+  document.querySelectorAll('input[name=type]').forEach(function(r){ r.addEventListener('change',function(){ setTimeout(function(){ if(s===0) go(1); },350); }); });
+  document.getElementById('form').addEventListener('submit',function(e){ e.preventDefault(); });
+})();
+</script>
+</body>
+</html>
