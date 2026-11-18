@@ -216,7 +216,7 @@ em{font-style:italic}
 .pays-title{color:var(--gold-deep);margin:0 0 clamp(36px,4vw,56px)}
 .pays-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
 .pays-list li{display:flex;flex-direction:column;align-items:center;gap:12px}
-.emb{height:24px;width:auto;filter:drop-shadow(0 2px 3px rgba(18,17,16,.18))}   /* emblème placé sous le texte, à la hauteur d'une ligne de texte */
+.emb{height:40px;width:auto;filter:drop-shadow(0 3px 5px rgba(18,17,16,.18))}   /* emblème centré sous le texte */
 /* Nom du pays + zones sur UNE seule ligne, même police (13 px), pays en gras */
 .pays-ligne{display:flex;align-items:baseline;justify-content:center;flex-wrap:nowrap;gap:10px;white-space:nowrap;font-family:var(--sans);font-size:13px;letter-spacing:.06em;color:var(--muted-light);position:relative;padding-bottom:14px}
 .pays-ligne::after{content:"";position:absolute;left:50%;bottom:0;width:64px;height:1px;background:var(--gold-deep);transform:translateX(-50%) scaleX(0);transition:transform 1.2s var(--ease) .3s}
