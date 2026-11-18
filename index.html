@@ -6,6 +6,7 @@
   Contenu et structure de la page (textes, images, liens).
   La mise en forme est dans  css/style.css
   Les interactions sont dans js/main.js
+  Les traductions sont dans  js/i18n.js  (repères data-i18n="t…" et data-i18n-attr)
   Les photos sont dans       img/   (logos clients : img/logos/)
 
   Ordre des sections (chaque bloc est précédé d'un commentaire) :
@@ -33,7 +34,7 @@
 </head>
 <body>
 <!-- Lien d'accessibilité : permet aux utilisateurs clavier de sauter le menu -->
-<a class="skip" href="#main">Aller au contenu</a>
+<a data-i18n="t001" class="skip" href="#main">Aller au contenu</a>
 
 <!-- Écran de chargement (logo + barre dorée), retiré automatiquement par js/main.js -->
 <div class="loader" aria-hidden="true"><img src="img/logo.png" alt=""><div class="bar"><i></i></div></div>
@@ -41,56 +42,56 @@
 <!-- ===== EN-TÊTE : logo, navigation (ordinateur), bouton devis, bouton menu (mobile) ===== -->
 <header class="hdr" id="hdr">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Cuisine Création Traiteur, accueil">
+    <a data-i18n-attr="aria-label:a176" class="brand" href="#top" aria-label="Cuisine Création Traiteur, accueil">
       <img src="img/logo.png" alt="">
-      <span>Cuisine Création<small>TRAITEUR · DEPUIS 2006</small></span>
+      <span data-i18n="t002">Cuisine Création<small>TRAITEUR · DEPUIS 2006</small></span>
     </a>
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#univers">Réceptions</a>
-      <a href="#signature">Savoir-faire</a>
-      <a href="#maison">La Maison</a>
-      <a href="#lieux">Lieux</a>
-      <a href="#methode">Méthode</a>
+    <nav data-i18n-attr="aria-label:a177" class="nav" aria-label="Navigation principale">
+      <a data-i18n="t003" href="#univers">Réceptions</a>
+      <a data-i18n="t004" href="#signature">Savoir-faire</a>
+      <a data-i18n="t005" href="#maison">La Maison</a>
+      <a data-i18n="t006" href="#lieux">Lieux</a>
+      <a data-i18n="t007" href="#methode">Méthode</a>
     </nav>
-    <a class="btn btn-gold btn-desk" href="#devis">Demander un devis</a>
-    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i></button>
+    <a data-i18n="t008" class="btn btn-gold btn-desk" href="#devis">Demander un devis</a>
+    <button data-i18n-attr="aria-label:a178" class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i></button>
   </div>
 </header>
 
 <!-- ===== MENU MOBILE plein écran (ouvert par le bouton burger) ===== -->
 <div class="mmenu" id="mmenu" aria-hidden="true">
   <ol>
-    <li><a class="big" href="#univers"><sup>01</sup>Réceptions</a></li>
-    <li><a class="big" href="#signature"><sup>02</sup>Savoir-faire</a></li>
-    <li><a class="big" href="#maison"><sup>03</sup>La Maison</a></li>
-    <li><a class="big" href="#lieux"><sup>04</sup>Lieux</a></li>
-    <li><a class="big" href="#devis"><sup>05</sup>Devis</a></li>
+    <li><a data-i18n="t009" class="big" href="#univers"><sup>01</sup>Réceptions</a></li>
+    <li><a data-i18n="t010" class="big" href="#signature"><sup>02</sup>Savoir-faire</a></li>
+    <li><a data-i18n="t011" class="big" href="#maison"><sup>03</sup>La Maison</a></li>
+    <li><a data-i18n="t012" class="big" href="#lieux"><sup>04</sup>Lieux</a></li>
+    <li><a data-i18n="t013" class="big" href="#devis"><sup>05</sup>Devis</a></li>
   </ol>
   <div class="mfoot">
     <a href="tel:+33382894450">+33 3 82 89 44 50</a>
     <a href="mailto:byc@cuisinecreation-traiteur.com">byc@cuisinecreation-traiteur.com</a>
-    <span>Cosnes-et-Romain · Grand Est · Luxembourg · Belgique</span>
+    <span data-i18n="t014">Cosnes-et-Romain · Grand Est · Luxembourg · Belgique</span>
   </div>
 </div>
 
 <main id="main">
 <!-- ===== HERO : photos en fondu (.slide), titre principal, boutons d'action.
      Pour changer les photos : modifier les <img> des .slide. ===== -->
-<section class="hero" id="top" aria-label="Présentation">
+<section data-i18n-attr="aria-label:a179" class="hero" id="top" aria-label="Présentation">
   <div class="slides">
-    <div class="slide on"><img src="img/hero-flamme.webp" alt="Un chef fait sauter une préparation à la flamme"></div>
-    <div class="slide"><img src="img/hero-gala.webp" alt="Salle de réception dressée pour un dîner de gala"></div>
-    <div class="slide"><img src="img/hero-grange.webp" alt="Grange illuminée dressée pour un mariage"></div>
-    <div class="slide"><img src="img/pieces-cocktail.webp" alt="Pièces cocktail dressées en série"></div>
+    <div class="slide on"><img data-i18n-attr="alt:a180" src="img/hero-flamme.webp" alt="Un chef fait sauter une préparation à la flamme"></div>
+    <div class="slide"><img data-i18n-attr="alt:a181" src="img/hero-gala.webp" alt="Salle de réception dressée pour un dîner de gala"></div>
+    <div class="slide"><img data-i18n-attr="alt:a182" src="img/hero-grange.webp" alt="Grange illuminée dressée pour un mariage"></div>
+    <div class="slide"><img data-i18n-attr="alt:a183" src="img/pieces-cocktail.webp" alt="Pièces cocktail dressées en série"></div>
   </div>
   <div class="wrap hero-inner">
-    <p class="eyebrow">Traiteur organisateur de réception · depuis 2006</p>
-    <h1><span class="line"><span>L’art de</span></span><span class="line"><span><em>recevoir,</em></span></span><span class="line"><span>en grand.</span></span></h1>
+    <p data-i18n="t015" class="eyebrow">Traiteur organisateur de réception · depuis 2006</p>
+    <h1 data-i18n="t016"><span class="line"><span>L’art de</span></span><span class="line"><span><em>recevoir,</em></span></span><span class="line"><span>en grand.</span></span></h1>
     <div class="hero-meta fade-up">
-      <p>Galas, séminaires, mariages et réceptions privées : une cuisine de saison, préparée sous les yeux de vos invités, en Grand Est, au Luxembourg et en Belgique.</p>
+      <p data-i18n="t017">Galas, séminaires, mariages et réceptions privées : une cuisine de saison, préparée sous les yeux de vos invités, en Grand Est, au Luxembourg et en Belgique.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" href="#devis">Composer mon événement <span class="arr">→</span></a>
-        <a class="btn btn-line" href="#univers">Découvrir</a>
+        <a data-i18n="t018" class="btn btn-gold" href="#devis">Composer mon événement <span class="arr">→</span></a>
+        <a data-i18n="t019" class="btn btn-line" href="#univers">Découvrir</a>
       </div>
     </div>
   </div>
@@ -98,18 +99,26 @@
 
 <!-- ===== BANDEAU DORÉ qui défile (texte écrit 2 fois pour une boucle continue) ===== -->
 <div class="marquee" aria-hidden="true">
-  <div class="track">
+  <div data-i18n="t020" class="track">
     <span>Dîners de gala</span><span>Cérémonies</span><span>Séminaires</span><span>Mariages</span><span>Cocktails dînatoires</span><span>Live cooking</span><span>Chef à domicile</span><span>Walking dinner</span>
     <span>Dîners de gala</span><span>Cérémonies</span><span>Séminaires</span><span>Mariages</span><span>Cocktails dînatoires</span><span>Live cooking</span><span>Chef à domicile</span><span>Walking dinner</span>
   </div>
 </div>
 
 <!-- ===== MANIFESTE « Un secret de famille » : le texte s'éclaire mot par mot au scroll ===== -->
-<section class="manifesto" aria-label="Notre philosophie">
+<section data-i18n-attr="aria-label:a184" class="manifesto" aria-label="Notre philosophie">
   <div class="wrap">
-    <p class="eyebrow">Un secret de famille</p>
-    <p class="big" id="mani">Chaque réception raconte une histoire. Depuis 2006, nous l’écrivons avec des <em>produits frais de saison</em>, un service attentif et le goût juste, pour que vos invités s’en souviennent longtemps.</p>
-    <p class="signline"><span>Entreprise familiale depuis 2006</span><i aria-hidden="true"></i><span>France · Luxembourg · Belgique</span></p>
+    <p data-i18n="t021" class="eyebrow">Un secret de famille</p>
+    <p data-i18n="t022" class="big" id="mani">Chaque réception raconte une histoire. Depuis 2006, nous l’écrivons avec des <em>produits frais de saison</em>, un service attentif et le goût juste, pour que vos invités s’en souviennent longtemps.</p>
+    <!-- Pays d'intervention : un emblème par pays (img/emblemes/), nom souligné en doré -->
+    <div class="pays">
+      <p data-i18n="t023" class="eyebrow pays-title">Trois pays, une même exigence</p>
+      <ul class="pays-list">
+        <li class="rv"><img class="emb emb-fr" src="img/emblemes/france.webp" alt="" loading="lazy"><h3 data-i18n="t024" class="pays-nom">France</h3><span data-i18n="t025" class="pays-zone">Longwy · Thionville · Metz · Nancy · Verdun</span></li>
+        <li class="rv"><img class="emb" src="img/emblemes/luxembourg.webp" alt="" loading="lazy"><h3 data-i18n="t026" class="pays-nom">Luxembourg</h3><span data-i18n="t027" class="pays-zone">Tout le Grand-Duché</span></li>
+        <li class="rv"><img class="emb" src="img/emblemes/belgique.webp" alt="" loading="lazy"><h3 data-i18n="t028" class="pays-nom">Belgique</h3><span data-i18n="t029" class="pays-zone">Wallonie &amp; Gaume</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -118,44 +127,44 @@
 <section class="univers" id="univers">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Nos réceptions</p><h2 class="rv">Quatre façons de <em>recevoir</em></h2></div>
-      <p class="rv">Du grand cocktail d’entreprise au dîner à deux, la même exigence : un menu sur mesure, une équipe dédiée, et rien à gérer de votre côté.</p>
+      <div><p data-i18n="t030" class="eyebrow">Nos réceptions</p><h2 data-i18n="t031" class="rv">Quatre façons de <em>recevoir</em></h2></div>
+      <p data-i18n="t032" class="rv">Du grand cocktail d’entreprise au dîner à deux, la même exigence : un menu sur mesure, une équipe dédiée, et rien à gérer de votre côté.</p>
     </div>
     <div class="cards">
       <article class="card" style="--i:0">
-        <div class="media"><img src="img/hero-gala.webp" alt="Salle dressée pour un dîner d’entreprise" data-par><div class="inset"><img src="img/gala-desserts.webp" alt="Desserts dressés en série pour un gala"></div></div>
+        <div class="media"><img data-i18n-attr="alt:a185" src="img/hero-gala.webp" alt="Salle dressée pour un dîner d’entreprise" data-par><div class="inset"><img data-i18n-attr="alt:a186" src="img/gala-desserts.webp" alt="Desserts dressés en série pour un gala"></div></div>
         <div class="body">
-          <span class="num">01 — ENTREPRISES</span>
-          <div><h3>Galas &amp; <em>cérémonies</em></h3><p style="margin-top:22px">Soirées de gala, inaugurations, séminaires, cocktails, repas d’affaires. Une organisation millimétrée, des produits issus de fournisseurs sélectionnés et un chef dédié à votre réception.</p></div>
-          <ul class="tags"><li>Galas</li><li>Séminaires</li><li>Inaugurations</li><li>Cocktails</li><li>Repas d’affaires</li></ul>
-          <a class="lnk" href="#devis">Organiser une réception pro <i></i></a>
+          <span data-i18n="t033" class="num">01 — ENTREPRISES</span>
+          <div><h3 data-i18n="t034">Galas &amp; <em>cérémonies</em></h3><p data-i18n="t035" style="margin-top:22px">Soirées de gala, inaugurations, séminaires, cocktails, repas d’affaires. Une organisation millimétrée, des produits issus de fournisseurs sélectionnés et un chef dédié à votre réception.</p></div>
+          <ul class="tags"><li data-i18n="t036">Galas</li><li data-i18n="t037">Séminaires</li><li data-i18n="t038">Inaugurations</li><li data-i18n="t039">Cocktails</li><li data-i18n="t040">Repas d’affaires</li></ul>
+          <a data-i18n="t041" class="lnk" href="#devis">Organiser une réception pro <i></i></a>
         </div>
       </article>
       <article class="card" style="--i:1">
-        <div class="media"><img src="img/mariage-table.webp" alt="Table de mariage aux bougies et fleurs rouges" data-par><div class="inset"><img src="img/grange-lumieres.webp" alt="Grange de mariage sous guirlandes lumineuses"></div></div>
+        <div class="media"><img data-i18n-attr="alt:a187" src="img/mariage-table.webp" alt="Table de mariage aux bougies et fleurs rouges" data-par><div class="inset"><img data-i18n-attr="alt:a188" src="img/grange-lumieres.webp" alt="Grange de mariage sous guirlandes lumineuses"></div></div>
         <div class="body">
-          <span class="num">02 — MARIAGES</span>
-          <div><h3>Le plus beau <em>des jours</em></h3><p style="margin-top:22px">Grand banquet ou réception intimiste, champêtre ou contemporain, à l’assiette ou en buffet. Show cooking au vin d’honneur, art de la table, et ce soin du détail… jusqu’à l’après-gâteau.</p></div>
-          <ul class="tags"><li>Vin d’honneur</li><li>Dîner à l’assiette</li><li>Brunch du lendemain</li></ul>
-          <a class="lnk" href="#devis">Préparer mon mariage <i></i></a>
+          <span data-i18n="t042" class="num">02 — MARIAGES</span>
+          <div><h3 data-i18n="t043">Le plus beau <em>des jours</em></h3><p data-i18n="t044" style="margin-top:22px">Grand banquet ou réception intimiste, champêtre ou contemporain, à l’assiette ou en buffet. Show cooking au vin d’honneur, art de la table, et ce soin du détail… jusqu’à l’après-gâteau.</p></div>
+          <ul class="tags"><li data-i18n="t045">Vin d’honneur</li><li data-i18n="t046">Dîner à l’assiette</li><li data-i18n="t047">Brunch du lendemain</li></ul>
+          <a data-i18n="t048" class="lnk" href="#devis">Préparer mon mariage <i></i></a>
         </div>
       </article>
       <article class="card" style="--i:2">
-        <div class="media"><img src="img/assiette-viande.webp" alt="Assiette de viande dressée sur nappe rose" data-par></div>
+        <div class="media"><img data-i18n-attr="alt:a189" src="img/assiette-viande.webp" alt="Assiette de viande dressée sur nappe rose" data-par></div>
         <div class="body">
-          <span class="num">03 — RÉCEPTIONS PRIVÉES</span>
-          <div><h3>Vos moments <em>de famille</em></h3><p style="margin-top:22px">Anniversaires, baptêmes, communions, cousinades. Nous nous occupons de tout pour que vous profitiez de votre événement en toute sérénité.</p></div>
-          <ul class="tags"><li>Anniversaires</li><li>Baptêmes</li><li>Communions</li><li>Cousinades</li></ul>
-          <a class="lnk" href="#devis">Organiser ma réception <i></i></a>
+          <span data-i18n="t049" class="num">03 — RÉCEPTIONS PRIVÉES</span>
+          <div><h3 data-i18n="t050">Vos moments <em>de famille</em></h3><p data-i18n="t051" style="margin-top:22px">Anniversaires, baptêmes, communions, cousinades. Nous nous occupons de tout pour que vous profitiez de votre événement en toute sérénité.</p></div>
+          <ul class="tags"><li data-i18n="t052">Anniversaires</li><li data-i18n="t053">Baptêmes</li><li data-i18n="t054">Communions</li><li data-i18n="t055">Cousinades</li></ul>
+          <a data-i18n="t056" class="lnk" href="#devis">Organiser ma réception <i></i></a>
         </div>
       </article>
       <article class="card" style="--i:3">
-        <div class="media"><img src="img/service-assiette.webp" alt="Service à l’assiette avec sauce versée en salle" data-par></div>
+        <div class="media"><img data-i18n-attr="alt:a190" src="img/service-assiette.webp" alt="Service à l’assiette avec sauce versée en salle" data-par></div>
         <div class="body">
-          <span class="num">04 — CHEF À DOMICILE</span>
-          <div><h3>Le restaurant, <em>chez vous</em></h3><p style="margin-top:22px">Dîner en amoureux, repas de famille ou réception à la maison : un chef se déplace et compose un menu selon vos envies, à partir de produits frais et de saison.</p></div>
-          <ul class="tags"><li>Dîner à deux</li><li>Repas de famille</li><li>Menu sur mesure</li></ul>
-          <a class="lnk" href="#devis">Réserver un chef <i></i></a>
+          <span data-i18n="t057" class="num">04 — CHEF À DOMICILE</span>
+          <div><h3 data-i18n="t058">Le restaurant, <em>chez vous</em></h3><p data-i18n="t059" style="margin-top:22px">Dîner en amoureux, repas de famille ou réception à la maison : un chef se déplace et compose un menu selon vos envies, à partir de produits frais et de saison.</p></div>
+          <ul class="tags"><li data-i18n="t060">Dîner à deux</li><li data-i18n="t061">Repas de famille</li><li data-i18n="t062">Menu sur mesure</li></ul>
+          <a data-i18n="t063" class="lnk" href="#devis">Réserver un chef <i></i></a>
         </div>
       </article>
     </div>
@@ -164,40 +173,40 @@
 
 <!-- ===== SAVOIR-FAIRE : galerie qui défile à l'horizontale sur ordinateur.
      Ajouter une photo : copier un <figure class="sig-item …"> ===== -->
-<section class="signature" id="signature" aria-label="Notre savoir-faire en images">
+<section data-i18n-attr="aria-label:a191" class="signature" id="signature" aria-label="Notre savoir-faire en images">
   <div class="sig-pin">
     <div class="sig-track">
       <div class="sig-intro">
-        <p class="eyebrow">Savoir-faire</p>
-        <h2>La précision <em>du geste</em>, à grande échelle.</h2>
-        <p>Cent assiettes identiques, mille pièces cocktail parfaites. C’est là que se joue la différence d’un grand traiteur.</p>
+        <p data-i18n="t064" class="eyebrow">Savoir-faire</p>
+        <h2 data-i18n="t065">La précision <em>du geste</em>, à grande échelle.</h2>
+        <p data-i18n="t066">Cent assiettes identiques, mille pièces cocktail parfaites. C’est là que se joue la différence d’un grand traiteur.</p>
       </div>
-      <figure class="sig-item s-tall s-high"><div class="ph"><img src="img/gala-desserts.webp" alt="Desserts alignés pour un dîner de gala" loading="lazy"></div><figcaption><b>Dîner de gala</b></figcaption></figure>
-      <figure class="sig-item s-sq s-low"><div class="ph"><img src="img/pieces-cocktail.webp" alt="Pièces cocktail salées sur plateaux" loading="lazy"></div><figcaption><b>Cocktail</b></figcaption></figure>
-      <figure class="sig-item s-tall"><div class="ph"><img src="img/tartelettes.webp" alt="Tartelettes au foie gras alignées" loading="lazy"></div><figcaption><b>Mises en bouche</b></figcaption></figure>
-      <figure class="sig-item s-tall s-low"><div class="ph"><img src="img/saumon-entree.webp" alt="Entrées de saumon en série" loading="lazy"></div><figcaption><b>Service à l’assiette</b></figcaption></figure>
-      <figure class="sig-item s-sq s-high"><div class="ph"><img src="img/ceviche-dressage.webp" alt="Dressage en direct de ceviches" loading="lazy"></div><figcaption><b>Dressage minute</b></figcaption></figure>
-      <figure class="sig-item s-tall"><div class="ph"><img src="img/bouchees-saumon.webp" alt="Bouchées au saumon sur caisse de vin" loading="lazy"></div><figcaption><b>Mise en scène</b></figcaption></figure>
-      <figure class="sig-item s-tall s-low"><div class="ph"><img src="img/charcuterie.webp" alt="Buffet de charcuterie sur présentoirs en bois" loading="lazy"></div><figcaption><b>Buffet</b></figcaption></figure>
-      <div class="sig-end"><p>Chaque pièce est préparée avec le même soin, qu’il y en ait <em style="color:var(--gold)">dix ou mille.</em></p><a class="btn btn-gold" href="#devis" style="align-self:flex-start">Parlons de votre projet <span class="arr">→</span></a></div>
+      <figure class="sig-item s-tall s-high"><div class="ph"><img data-i18n-attr="alt:a192" src="img/gala-desserts.webp" alt="Desserts alignés pour un dîner de gala" loading="lazy"></div><figcaption data-i18n="t067"><b>Dîner de gala</b></figcaption></figure>
+      <figure class="sig-item s-sq s-low"><div class="ph"><img data-i18n-attr="alt:a193" src="img/pieces-cocktail.webp" alt="Pièces cocktail salées sur plateaux" loading="lazy"></div><figcaption data-i18n="t068"><b>Cocktail</b></figcaption></figure>
+      <figure class="sig-item s-tall"><div class="ph"><img data-i18n-attr="alt:a194" src="img/tartelettes.webp" alt="Tartelettes au foie gras alignées" loading="lazy"></div><figcaption data-i18n="t069"><b>Mises en bouche</b></figcaption></figure>
+      <figure class="sig-item s-tall s-low"><div class="ph"><img data-i18n-attr="alt:a195" src="img/saumon-entree.webp" alt="Entrées de saumon en série" loading="lazy"></div><figcaption data-i18n="t070"><b>Service à l’assiette</b></figcaption></figure>
+      <figure class="sig-item s-sq s-high"><div class="ph"><img data-i18n-attr="alt:a196" src="img/ceviche-dressage.webp" alt="Dressage en direct de ceviches" loading="lazy"></div><figcaption data-i18n="t071"><b>Dressage minute</b></figcaption></figure>
+      <figure class="sig-item s-tall"><div class="ph"><img data-i18n-attr="alt:a197" src="img/bouchees-saumon.webp" alt="Bouchées au saumon sur caisse de vin" loading="lazy"></div><figcaption data-i18n="t072"><b>Mise en scène</b></figcaption></figure>
+      <figure class="sig-item s-tall s-low"><div class="ph"><img data-i18n-attr="alt:a198" src="img/charcuterie.webp" alt="Buffet de charcuterie sur présentoirs en bois" loading="lazy"></div><figcaption data-i18n="t073"><b>Buffet</b></figcaption></figure>
+      <div class="sig-end"><p data-i18n="t074">Chaque pièce est préparée avec le même soin, qu’il y en ait <em style="color:var(--gold)">dix ou mille.</em></p><a data-i18n="t075" class="btn btn-gold" href="#devis" style="align-self:flex-start">Parlons de votre projet <span class="arr">→</span></a></div>
     </div>
   </div>
 </section>
 
 <!-- ===== LIVE COOKING : 2 photos à gauche, texte + bouton à droite ===== -->
-<section class="live" id="live" aria-label="Live cooking">
+<section data-i18n-attr="aria-label:a199" class="live" id="live" aria-label="Live cooking">
   <div class="wrap">
     <div class="live-grid">
       <div class="live-imgs">
-        <div class="m1 reveal-clip"><img src="img/live-brochettes.webp" alt="Chef en live cooking servant des brochettes" data-par></div>
-        <div class="m2 reveal-clip"><img src="img/ceviche-dressage.webp" alt="Mains dressant des ceviches en direct"></div>
+        <div class="m1 reveal-clip"><img data-i18n-attr="alt:a200" src="img/live-brochettes.webp" alt="Chef en live cooking servant des brochettes" data-par></div>
+        <div class="m2 reveal-clip"><img data-i18n-attr="alt:a201" src="img/ceviche-dressage.webp" alt="Mains dressant des ceviches en direct"></div>
       </div>
       <div class="txt rv">
-        <p class="eyebrow">Notre signature</p>
-        <h2>Live <em>cooking</em></h2>
-        <blockquote>« Aucun secret n’est préservé, tout est cuisiné devant vous. »</blockquote>
-        <p>Nos chefs préparent vos pièces cocktail et vos amuse-bouches sous les yeux de vos invités. Fraîcheur, spectacle et convivialité : le moment dont on parle encore après la soirée.</p>
-        <a class="btn btn-ink" href="#devis">Ajouter un live cooking <span class="arr">→</span></a>
+        <p data-i18n="t076" class="eyebrow">Notre signature</p>
+        <h2 data-i18n="t077">Live <em>cooking</em></h2>
+        <blockquote data-i18n="t078">« Aucun secret n’est préservé, tout est cuisiné devant vous. »</blockquote>
+        <p data-i18n="t079">Nos chefs préparent vos pièces cocktail et vos amuse-bouches sous les yeux de vos invités. Fraîcheur, spectacle et convivialité : le moment dont on parle encore après la soirée.</p>
+        <a data-i18n="t080" class="btn btn-ink" href="#devis">Ajouter un live cooking <span class="arr">→</span></a>
       </div>
     </div>
   </div>
@@ -205,51 +214,51 @@
 
 <!-- ===== FORMATS : accordéon. Chaque <li class="fitem"> = un format (titre, photo, texte).
      data-format du lien doit correspondre exactement à une option du champ « Format souhaité » ===== -->
-<section class="formats" id="formats" aria-label="Nos formats">
+<section data-i18n-attr="aria-label:a202" class="formats" id="formats" aria-label="Nos formats">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Les formats</p><h2 class="rv">Du walking dinner <em style="color:var(--gold-deep)">au dîner placé</em></h2></div>
-      <p class="rv" style="color:var(--muted-light)">Nous vous guidons vers le format le plus adapté à votre lieu, votre nombre d’invités et le rythme de votre soirée.</p>
+      <div><p data-i18n="t081" class="eyebrow">Les formats</p><h2 data-i18n="t082" class="rv">Du walking dinner <em style="color:var(--gold-deep)">au dîner placé</em></h2></div>
+      <p data-i18n="t083" class="rv" style="color:var(--muted-light)">Nous vous guidons vers le format le plus adapté à votre lieu, votre nombre d’invités et le rythme de votre soirée.</p>
     </div>
     <ul class="flist">
       <li class="fitem open">
-        <button class="frow" type="button" aria-expanded="true" aria-controls="fp0" id="fb0"><span class="n">01</span><span class="t">Cocktail dînatoire</span><span class="plus" aria-hidden="true"></span></button>
-        <div class="fpanel" id="fp0" role="region" aria-labelledby="fb0"><div class="fin"><div class="fimg"><img src="img/pieces-cocktail.webp" alt="Pièces cocktail salées" loading="lazy"></div><div class="ftxt"><p>Un assortiment de pièces salées et sucrées servies debout, pour laisser vos invités circuler et échanger. Idéal pour les inaugurations, les soirées d’entreprise et les vins d’honneur.</p><a href="#devis" class="flink" data-format="Cocktail dînatoire">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+        <button data-i18n="t084" class="frow" type="button" aria-expanded="true" aria-controls="fp0" id="fb0"><span class="n">01</span><span class="t">Cocktail dînatoire</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp0" role="region" aria-labelledby="fb0"><div class="fin"><div class="fimg"><img data-i18n-attr="alt:a203" src="img/pieces-cocktail.webp" alt="Pièces cocktail salées" loading="lazy"></div><div class="ftxt"><p data-i18n="t085">Un assortiment de pièces salées et sucrées servies debout, pour laisser vos invités circuler et échanger. Idéal pour les inaugurations, les soirées d’entreprise et les vins d’honneur.</p><a data-i18n="t086" href="#devis" class="flink" data-format="Cocktail dînatoire">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
       </li>
       <li class="fitem">
-        <button class="frow" type="button" aria-expanded="false" aria-controls="fp1" id="fb1"><span class="n">02</span><span class="t">Walking dinner</span><span class="plus" aria-hidden="true"></span></button>
-        <div class="fpanel" id="fp1" role="region" aria-labelledby="fb1"><div class="fin"><div class="fimg"><img src="img/bouchees-saumon.webp" alt="Bouchées au saumon" loading="lazy"></div><div class="ftxt"><p>Des mini-plats servis en circulation tout au long de la soirée : la générosité d’un dîner, la liberté d’un cocktail.</p><a href="#devis" class="flink" data-format="Walking dinner">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+        <button data-i18n="t087" class="frow" type="button" aria-expanded="false" aria-controls="fp1" id="fb1"><span class="n">02</span><span class="t">Walking dinner</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp1" role="region" aria-labelledby="fb1"><div class="fin"><div class="fimg"><img data-i18n-attr="alt:a204" src="img/bouchees-saumon.webp" alt="Bouchées au saumon" loading="lazy"></div><div class="ftxt"><p data-i18n="t088">Des mini-plats servis en circulation tout au long de la soirée : la générosité d’un dîner, la liberté d’un cocktail.</p><a data-i18n="t089" href="#devis" class="flink" data-format="Walking dinner">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
       </li>
       <li class="fitem">
-        <button class="frow" type="button" aria-expanded="false" aria-controls="fp2" id="fb2"><span class="n">03</span><span class="t">Service à l’assiette</span><span class="plus" aria-hidden="true"></span></button>
-        <div class="fpanel" id="fp2" role="region" aria-labelledby="fb2"><div class="fin"><div class="fimg"><img src="img/service-assiette.webp" alt="Service en salle" loading="lazy"></div><div class="ftxt"><p>Un dîner placé, de l’entrée au dessert, servi en salle par nos équipes. Le format de référence pour les galas, les cérémonies et les mariages.</p><a href="#devis" class="flink" data-format="Service à l’assiette">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+        <button data-i18n="t090" class="frow" type="button" aria-expanded="false" aria-controls="fp2" id="fb2"><span class="n">03</span><span class="t">Service à l’assiette</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp2" role="region" aria-labelledby="fb2"><div class="fin"><div class="fimg"><img data-i18n-attr="alt:a205" src="img/service-assiette.webp" alt="Service en salle" loading="lazy"></div><div class="ftxt"><p data-i18n="t091">Un dîner placé, de l’entrée au dessert, servi en salle par nos équipes. Le format de référence pour les galas, les cérémonies et les mariages.</p><a data-i18n="t092" href="#devis" class="flink" data-format="Service à l’assiette">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
       </li>
       <li class="fitem">
-        <button class="frow" type="button" aria-expanded="false" aria-controls="fp3" id="fb3"><span class="n">04</span><span class="t">Buffet</span><span class="plus" aria-hidden="true"></span></button>
-        <div class="fpanel" id="fp3" role="region" aria-labelledby="fb3"><div class="fin"><div class="fimg"><img src="img/charcuterie.webp" alt="Buffet sur présentoirs" loading="lazy"></div><div class="ftxt"><p>Un buffet généreux, chaud ou froid, mis en scène sur nos présentoirs. Convivial, pour les grands groupes comme pour les repas de famille.</p><a href="#devis" class="flink" data-format="Buffet">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+        <button data-i18n="t093" class="frow" type="button" aria-expanded="false" aria-controls="fp3" id="fb3"><span class="n">04</span><span class="t">Buffet</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp3" role="region" aria-labelledby="fb3"><div class="fin"><div class="fimg"><img data-i18n-attr="alt:a206" src="img/charcuterie.webp" alt="Buffet sur présentoirs" loading="lazy"></div><div class="ftxt"><p data-i18n="t094">Un buffet généreux, chaud ou froid, mis en scène sur nos présentoirs. Convivial, pour les grands groupes comme pour les repas de famille.</p><a data-i18n="t095" href="#devis" class="flink" data-format="Buffet">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
       </li>
       <li class="fitem">
-        <button class="frow" type="button" aria-expanded="false" aria-controls="fp4" id="fb4"><span class="n">05</span><span class="t">Garden party &amp; brunch</span><span class="plus" aria-hidden="true"></span></button>
-        <div class="fpanel" id="fp4" role="region" aria-labelledby="fb4"><div class="fin"><div class="fimg"><img src="img/table-champetre.webp" alt="Table champêtre" loading="lazy"></div><div class="ftxt"><p>Pour les beaux jours ou le lendemain d’un mariage : une table champêtre, des produits de saison et une ambiance détendue.</p><a href="#devis" class="flink" data-format="Garden party & brunch">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
+        <button data-i18n="t096" class="frow" type="button" aria-expanded="false" aria-controls="fp4" id="fb4"><span class="n">05</span><span class="t">Garden party &amp; brunch</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="fpanel" id="fp4" role="region" aria-labelledby="fb4"><div class="fin"><div class="fimg"><img data-i18n-attr="alt:a207" src="img/table-champetre.webp" alt="Table champêtre" loading="lazy"></div><div class="ftxt"><p data-i18n="t097">Pour les beaux jours ou le lendemain d’un mariage : une table champêtre, des produits de saison et une ambiance détendue.</p><a data-i18n="t098" href="#devis" class="flink" data-format="Garden party / brunch">Choisir ce format <span aria-hidden="true">→</span></a></div></div></div>
       </li>
     </ul>
   </div>
 </section>
 
 <!-- ===== LA MAISON : portrait d'Arthur & Loïc + frise chronologique (.tl) ===== -->
-<section class="maison" id="maison" aria-label="La Maison">
+<section data-i18n-attr="aria-label:a208" class="maison" id="maison" aria-label="La Maison">
   <div class="wrap">
     <div class="grid">
-      <figure class="portrait" style="margin:0"><img src="img/fondateurs.webp" alt="Arthur et Loïc, Cuisine Création Traiteur" data-par loading="lazy"><figcaption>Arthur &amp; Loïc</figcaption></figure>
+      <figure class="portrait" style="margin:0"><img data-i18n-attr="alt:a209" src="img/fondateurs.webp" alt="Arthur et Loïc, Cuisine Création Traiteur" data-par loading="lazy"><figcaption data-i18n="t099">Arthur &amp; Loïc</figcaption></figure>
       <div class="story">
-        <p class="eyebrow">La Maison</p>
-        <h2 class="rv">Une histoire <em>de famille</em></h2>
-        <p class="lead rv">Arthur et Loïc accompagnent chaque détail de votre événement avec passion. Le talent de toute l’équipe est dédié à un seul objectif : donner vie à vos envies les plus raffinées.</p>
+        <p data-i18n="t100" class="eyebrow">La Maison</p>
+        <h2 data-i18n="t101" class="rv">Une histoire <em>de famille</em></h2>
+        <p data-i18n="t102" class="lead rv">Arthur et Loïc accompagnent chaque détail de votre événement avec passion. Le talent de toute l’équipe est dédié à un seul objectif : donner vie à vos envies les plus raffinées.</p>
         <div class="tlw"><span class="prog" aria-hidden="true"></span><ol class="tl">
-          <li class="rv"><b>2006</b><strong>Le commencement</strong><span>Originaire de Savoie, Loïc crée un restaurant traditionnel savoyard dédié à sa région natale.</span></li>
-          <li class="rv"><b>2010</b><strong>Nouveaux services</strong><span>Face à une demande croissante : chef à domicile, service traiteur et restauration collective.</span></li>
-          <li class="rv"><b>2017</b><strong>Une histoire de famille</strong><span>Arthur rejoint l’aventure et la maison devient organisateur de réception.</span></li>
-          <li class="rv"><b>Aujourd’hui</b><strong>Grand Est, Luxembourg, Belgique</strong><span>Une clientèle fidèle de particuliers et d’entreprises, de Longwy à Metz, Nancy, Thionville et Verdun.</span></li>
+          <li data-i18n="t103" class="rv"><b>2006</b><strong>Le commencement</strong><span>Originaire de Savoie, Loïc crée un restaurant traditionnel savoyard dédié à sa région natale.</span></li>
+          <li data-i18n="t104" class="rv"><b>2010</b><strong>Nouveaux services</strong><span>Face à une demande croissante : chef à domicile, service traiteur et restauration collective.</span></li>
+          <li data-i18n="t105" class="rv"><b>2017</b><strong>Une histoire de famille</strong><span>Arthur rejoint l’aventure et la maison devient organisateur de réception.</span></li>
+          <li data-i18n="t106" class="rv"><b>Aujourd’hui</b><strong>Grand Est, Luxembourg, Belgique</strong><span>Une clientèle fidèle de particuliers et d’entreprises, de Longwy à Metz, Nancy, Thionville et Verdun.</span></li>
         </ol></div>
       </div>
     </div>
@@ -257,52 +266,52 @@
 </section>
 
 <!-- ===== LIEUX D'EXCEPTION : photos à faire glisser. Une <figure class="venue"> par lieu ===== -->
-<section class="lieux" id="lieux" aria-label="Lieux de réception">
+<section data-i18n-attr="aria-label:a210" class="lieux" id="lieux" aria-label="Lieux de réception">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Lieux inoubliables</p><h2 class="rv">Des lieux <em>d’exception</em></h2></div>
-      <p class="rv">Le choix du lieu compte autant que celui du traiteur. Nous travaillons avec des domaines et des salles sélectionnés : une seule demande, et nous vous répondons ensemble.</p>
+      <div><p data-i18n="t107" class="eyebrow">Lieux inoubliables</p><h2 data-i18n="t108" class="rv">Des lieux <em>d’exception</em></h2></div>
+      <p data-i18n="t109" class="rv">Le choix du lieu compte autant que celui du traiteur. Nous travaillons avec des domaines et des salles sélectionnés : une seule demande, et nous vous répondons ensemble.</p>
     </div>
   </div>
-  <div class="drag" tabindex="0" aria-label="Galerie de lieux, faites défiler horizontalement">
-    <figure class="venue"><div class="ph"><img src="img/chateau-parc.webp" alt="Château et son parc" loading="lazy"></div><figcaption><b>Château</b></figcaption></figure>
-    <figure class="venue"><div class="ph"><img src="img/grange-salle.webp" alt="Grande salle sous charpente dressée pour un mariage" loading="lazy"></div><figcaption><b>Grange</b></figcaption></figure>
-    <figure class="venue"><div class="ph"><img src="img/orangerie-thonne.webp" alt="Orangerie de Thonne-les-Prés dressée pour une réception" loading="lazy"></div><figcaption><b>Orangerie</b></figcaption></figure>
-    <figure class="venue"><div class="ph"><img src="img/chateau-thonne.webp" alt="Façade du château de Thonne-les-Prés" loading="lazy"></div><figcaption><b>Domaine</b></figcaption></figure>
-    <figure class="venue"><div class="ph"><img src="img/loft-industriel.webp" alt="Loft industriel à mezzanine" loading="lazy"></div><figcaption><b>Loft</b></figcaption></figure>
-    <figure class="venue"><div class="ph"><img src="img/cour-grange.webp" alt="Cour de ferme en pierre aménagée pour un cocktail" loading="lazy"></div><figcaption><b>Cour de ferme</b></figcaption></figure>
+  <div data-i18n-attr="aria-label:a211" class="drag" tabindex="0" aria-label="Galerie de lieux, faites défiler horizontalement">
+    <figure class="venue"><div class="ph"><img data-i18n-attr="alt:a212" src="img/chateau-parc.webp" alt="Château et son parc" loading="lazy"></div><figcaption data-i18n="t110"><b>Château</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img data-i18n-attr="alt:a213" src="img/grange-salle.webp" alt="Grande salle sous charpente dressée pour un mariage" loading="lazy"></div><figcaption data-i18n="t111"><b>Grange</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img data-i18n-attr="alt:a214" src="img/orangerie-thonne.webp" alt="Orangerie de Thonne-les-Prés dressée pour une réception" loading="lazy"></div><figcaption data-i18n="t112"><b>Orangerie</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img data-i18n-attr="alt:a215" src="img/chateau-thonne.webp" alt="Façade du château de Thonne-les-Prés" loading="lazy"></div><figcaption data-i18n="t113"><b>Domaine</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img data-i18n-attr="alt:a216" src="img/loft-industriel.webp" alt="Loft industriel à mezzanine" loading="lazy"></div><figcaption data-i18n="t114"><b>Loft</b></figcaption></figure>
+    <figure class="venue"><div class="ph"><img data-i18n-attr="alt:a217" src="img/cour-grange.webp" alt="Cour de ferme en pierre aménagée pour un cocktail" loading="lazy"></div><figcaption data-i18n="t115"><b>Cour de ferme</b></figcaption></figure>
   </div>
-  <div class="wrap"><p class="drag-hint" aria-hidden="true"><i></i>Glisser pour explorer</p></div>
+  <div class="wrap"><p data-i18n="t116" class="drag-hint" aria-hidden="true"><i></i>Glisser pour explorer</p></div>
 </section>
 
 <!-- ===== MÉTHODE : 4 étapes ===== -->
-<section class="methode" id="methode" aria-label="Notre méthode">
+<section data-i18n-attr="aria-label:a218" class="methode" id="methode" aria-label="Notre méthode">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Méthode</p><h2 class="rv" style="color:var(--ivory)">Du premier échange <em>au dernier toast</em></h2></div>
-      <p class="rv">Un interlocuteur unique, de la conception à la réalisation, dans les délais les plus adaptés.</p>
+      <div><p data-i18n="t117" class="eyebrow">Méthode</p><h2 data-i18n="t118" class="rv" style="color:var(--ivory)">Du premier échange <em>au dernier toast</em></h2></div>
+      <p data-i18n="t119" class="rv">Un interlocuteur unique, de la conception à la réalisation, dans les délais les plus adaptés.</p>
     </div>
     <ol class="steps">
-      <li class="rv"><b>01</b><strong>Votre projet</strong><span>Vous nous décrivez l’événement : date, invités, lieu, envies.</span></li>
-      <li class="rv"><b>02</b><strong>Proposition sur mesure</strong><span>Menu et devis composés pour vous, ajustés ensemble.</span></li>
-      <li class="rv"><b>03</b><strong>Organisation</strong><span>Lieu, art de la table, service, animations culinaires : tout est orchestré.</span></li>
-      <li class="rv"><b>04</b><strong>Le jour J</strong><span>Nos équipes s’occupent de tout. Vous profitez.</span></li>
+      <li data-i18n="t120" class="rv"><b>01</b><strong>Votre projet</strong><span>Vous nous décrivez l’événement : date, invités, lieu, envies.</span></li>
+      <li data-i18n="t121" class="rv"><b>02</b><strong>Proposition sur mesure</strong><span>Menu et devis composés pour vous, ajustés ensemble.</span></li>
+      <li data-i18n="t122" class="rv"><b>03</b><strong>Organisation</strong><span>Lieu, art de la table, service, animations culinaires : tout est orchestré.</span></li>
+      <li data-i18n="t123" class="rv"><b>04</b><strong>Le jour J</strong><span>Nos équipes s’occupent de tout. Vous profitez.</span></li>
     </ol>
   </div>
 </section>
 
 <!-- ===== AVIS GOOGLE (note réelle de la fiche) + LOGOS CLIENTS (img/logos/) ===== -->
-<section class="trust" aria-label="Ils nous font confiance">
+<section data-i18n-attr="aria-label:a219" class="trust" aria-label="Ils nous font confiance">
   <div class="wrap trust-grid">
     <div class="google rv">
-      <p class="eyebrow">Avis clients</p>
+      <p data-i18n="t124" class="eyebrow">Avis clients</p>
       <div class="score">5,0<sup>/5</sup></div>
-      <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
-      <p>La note attribuée par 91 clients sur Google. Particuliers comme entreprises, ils recommandent la maison.</p>
-      <a href="https://www.google.com/maps/search/Cuisine+Cr%C3%A9ation+Traiteur+Cosnes-et-Romain">Lire les avis sur Google →</a>
+      <div data-i18n-attr="aria-label:a220" class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+      <p data-i18n="t125">La note attribuée par 91 clients sur Google. Particuliers comme entreprises, ils recommandent la maison.</p>
+      <a data-i18n="t126" href="https://www.google.com/maps/search/Cuisine+Cr%C3%A9ation+Traiteur+Cosnes-et-Romain">Lire les avis sur Google →</a>
     </div>
     <div class="rv">
-      <p class="eyebrow">Ils nous font confiance</p>
+      <p data-i18n="t127" class="eyebrow">Ils nous font confiance</p>
       <ul class="logos"><li><img src="img/logos/societe-generale.png" alt="Société Générale" loading="lazy"></li><li><img src="img/logos/credit-agricole.png" alt="Crédit Agricole" loading="lazy"></li><li><img src="img/logos/bmw.png" alt="BMW" loading="lazy"></li><li><img src="img/logos/ford.png" alt="Ford" loading="lazy"></li><li><img src="img/logos/hyundai.png" alt="Hyundai" loading="lazy"></li><li><img src="img/logos/husqvarna.png" alt="Husqvarna" loading="lazy"></li><li><img src="img/logos/auchan.png" alt="Auchan" loading="lazy"></li><li><img src="img/logos/douanes.png" alt="Douanes &amp; Droits indirects" loading="lazy"></li><li><img src="img/logos/ville-longwy.png" alt="Ville de Longwy" loading="lazy"></li><li><img src="img/logos/cigl-rumelange.png" alt="CIGL Rumelange" loading="lazy"></li><li><img src="img/logos/cigl-kalteiteng.png" alt="CIGL Kälteiteng" loading="lazy"></li><li><img src="img/logos/cafpi.png" alt="CAFPI" loading="lazy"></li><li><img src="img/logos/cbc.png" alt="CBC Computer Business Center" loading="lazy"></li><li><img src="img/logos/ouilab.png" alt="Oui Lab" loading="lazy"></li><li><img src="img/logos/hifi-international.png" alt="HiFi International" loading="lazy"></li><li><img src="img/logos/ntk.png" alt="NTK" loading="lazy"></li><li><img src="img/logos/atm.png" alt="ATM" loading="lazy"></li></ul>
     </div>
   </div>
@@ -310,64 +319,64 @@
 
 <!-- ===== FORMULAIRE DE DEVIS en 3 étapes (.fstep). Validation et étapes : js/main.js, partie 11.
      Front-end seulement : rien n'est envoyé tant que le back-end n'est pas branché ===== -->
-<section class="devis" id="devis" aria-label="Demande de devis">
+<section data-i18n-attr="aria-label:a221" class="devis" id="devis" aria-label="Demande de devis">
   <div class="devis-bg"><img src="img/epices-ardoise.webp" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="intro">
-      <p class="eyebrow">Demande de devis</p>
-      <h2 class="rv">Composons votre <em>événement</em></h2>
-      <p>Trois étapes, deux minutes. Nous revenons vers vous avec une proposition personnalisée.</p>
+      <p data-i18n="t128" class="eyebrow">Demande de devis</p>
+      <h2 data-i18n="t129" class="rv">Composons votre <em>événement</em></h2>
+      <p data-i18n="t130">Trois étapes, deux minutes. Nous revenons vers vous avec une proposition personnalisée.</p>
       <div class="contact-lines">
-        <span>Vous préférez en parler ?</span>
+        <span data-i18n="t131">Vous préférez en parler ?</span>
         <a href="tel:+33382894450">+33 3 82 89 44 50</a>
         <a href="mailto:byc@cuisinecreation-traiteur.com" style="font-size:clamp(18px,1.6vw,22px)">byc@cuisinecreation-traiteur.com</a>
-        <span style="margin-top:8px">Bureau du mardi au vendredi · 9 h–12 h · 13 h–18 h</span>
+        <span data-i18n="t132" style="margin-top:8px">Bureau du mardi au vendredi · 9 h–12 h · 13 h–18 h</span>
       </div>
     </div>
     <form class="form" id="form" novalidate>
       <div class="fsteps" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
       <div class="fstep on" data-step="0">
         <fieldset>
-          <legend>Quel événement préparez-vous ?</legend>
+          <legend data-i18n="t133">Quel événement préparez-vous ?</legend>
           <div class="choices">
-            <label class="choice"><input type="radio" name="type" value="Gala / cérémonie"><span><b>Gala / cérémonie</b><small>Entreprise, institution</small></span></label>
-            <label class="choice"><input type="radio" name="type" value="Séminaire / cocktail"><span><b>Séminaire / cocktail</b><small>Inauguration, repas d’affaires</small></span></label>
-            <label class="choice"><input type="radio" name="type" value="Mariage"><span><b>Mariage</b><small>Vin d’honneur, dîner, brunch</small></span></label>
-            <label class="choice"><input type="radio" name="type" value="Réception privée"><span><b>Réception privée</b><small>Anniversaire, baptême…</small></span></label>
-            <label class="choice"><input type="radio" name="type" value="Chef à domicile"><span><b>Chef à domicile</b><small>Dîner chez vous</small></span></label>
-            <label class="choice"><input type="radio" name="type" value="Association"><span><b>Association</b><small>Repas, soirée à thème</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Gala / cérémonie"><span data-i18n="t134"><b>Gala / cérémonie</b><small>Entreprise, institution</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Séminaire / cocktail"><span data-i18n="t135"><b>Séminaire / cocktail</b><small>Inauguration, repas d’affaires</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Mariage"><span data-i18n="t136"><b>Mariage</b><small>Vin d’honneur, dîner, brunch</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Réception privée"><span data-i18n="t137"><b>Réception privée</b><small>Anniversaire, baptême…</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Chef à domicile"><span data-i18n="t138"><b>Chef à domicile</b><small>Dîner chez vous</small></span></label>
+            <label class="choice"><input type="radio" name="type" value="Association"><span data-i18n="t139"><b>Association</b><small>Repas, soirée à thème</small></span></label>
           </div>
         </fieldset>
       </div>
       <div class="fstep" data-step="1">
-        <h3>Les grandes lignes</h3>
+        <h3 data-i18n="t140">Les grandes lignes</h3>
         <div class="fields">
-          <div class="field"><label for="f-date">Date</label><input id="f-date" type="date"></div>
-          <div class="field"><label for="f-guests">Nombre d’invités</label><input id="f-guests" type="number" min="1" inputmode="numeric" placeholder="ex. 120"></div>
-          <div class="field"><label for="f-place">Lieu ou ville</label><input id="f-place" type="text" placeholder="ex. Luxembourg, Metz…"></div>
-          <div class="field"><label for="f-format">Format souhaité</label><select id="f-format"><option value="">À définir ensemble</option><option>Cocktail dînatoire</option><option>Walking dinner</option><option>Service à l’assiette</option><option>Buffet</option><option>Garden party / brunch</option></select></div>
-          <div class="field full"><label for="f-msg">Vos envies (facultatif)</label><textarea id="f-msg" placeholder="Ambiance, live cooking, régimes alimentaires…"></textarea></div>
+          <div class="field"><label data-i18n="t141" for="f-date">Date</label><input id="f-date" type="date"></div>
+          <div class="field"><label data-i18n="t142" for="f-guests">Nombre d’invités</label><input data-i18n-attr="placeholder:a222" id="f-guests" type="number" min="1" inputmode="numeric" placeholder="ex. 120"></div>
+          <div class="field"><label data-i18n="t143" for="f-place">Lieu ou ville</label><input data-i18n-attr="placeholder:a223" id="f-place" type="text" placeholder="ex. Luxembourg, Metz…"></div>
+          <div class="field"><label data-i18n="t144" for="f-format">Format souhaité</label><select id="f-format"><option data-i18n="t145" value="">À définir ensemble</option><option data-i18n="t146" value="Cocktail dînatoire">Cocktail dînatoire</option><option data-i18n="t147" value="Walking dinner">Walking dinner</option><option data-i18n="t148" value="Service à l’assiette">Service à l’assiette</option><option data-i18n="t149" value="Buffet">Buffet</option><option data-i18n="t150" value="Garden party / brunch">Garden party / brunch</option></select></div>
+          <div class="field full"><label data-i18n="t151" for="f-msg">Vos envies (facultatif)</label><textarea data-i18n-attr="placeholder:a224" id="f-msg" placeholder="Ambiance, live cooking, régimes alimentaires…"></textarea></div>
         </div>
       </div>
       <div class="fstep" data-step="2">
-        <h3>Vos coordonnées</h3>
+        <h3 data-i18n="t152">Vos coordonnées</h3>
         <div class="fields">
-          <div class="field"><label for="f-name">Nom et prénom</label><input id="f-name" type="text" autocomplete="name"></div>
-          <div class="field"><label for="f-company">Société (facultatif)</label><input id="f-company" type="text" autocomplete="organization"></div>
-          <div class="field"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email"></div>
-          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel" autocomplete="tel"></div>
+          <div class="field"><label data-i18n="t153" for="f-name">Nom et prénom</label><input id="f-name" type="text" autocomplete="name"></div>
+          <div class="field"><label data-i18n="t154" for="f-company">Société (facultatif)</label><input id="f-company" type="text" autocomplete="organization"></div>
+          <div class="field"><label data-i18n="t155" for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email"></div>
+          <div class="field"><label data-i18n="t156" for="f-tel">Téléphone</label><input id="f-tel" type="tel" autocomplete="tel"></div>
         </div>
-        <label class="consent"><input type="checkbox" id="f-ok">J’accepte que mes informations soient utilisées pour traiter ma demande, conformément à la politique de confidentialité.</label>
+        <label class="consent"><input type="checkbox" id="f-ok"><span data-i18n="t158">J’accepte que mes informations soient utilisées pour traiter ma demande, conformément à la politique de confidentialité.</span></label>
       </div>
       <div class="fstep done" data-step="3">
         <div class="check" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
-        <h3>Merci, c’est noté.</h3>
-        <p id="recap">Votre demande est prête. (Maquette : l’envoi sera branché lors de la mise en production.)</p>
+        <h3 data-i18n="t159">Merci, c’est noté.</h3>
+        <p data-i18n="t160" id="recap">Votre demande est prête. (Maquette : l’envoi sera branché lors de la mise en production.)</p>
       </div>
       <p class="err" id="err" role="alert"></p>
       <div class="fnav">
-        <button type="button" class="back" id="back" hidden>← Retour</button>
-        <button type="button" class="btn btn-gold" id="next" style="margin-left:auto">Continuer <span class="arr">→</span></button>
+        <button data-i18n="t161" type="button" class="back" id="back" hidden>← Retour</button>
+        <button data-i18n="t162" type="button" class="btn btn-gold" id="next" style="margin-left:auto">Continuer <span class="arr">→</span></button>
       </div>
     </form>
   </div>
@@ -377,25 +386,27 @@
 <!-- ===== PIED DE PAGE : slogan, adresse, contact, réseaux, liens légaux ===== -->
 <footer class="foot">
   <div class="wrap">
-    <p class="big">Recevoir <em>avec goût.</em></p>
+    <p data-i18n="t163" class="big">Recevoir <em>avec goût.</em></p>
     <div class="fcols">
-      <div><img src="img/logo.png" alt="Cuisine Création Traiteur"><p>Traiteur organisateur de réception depuis 2006. Grand Est, Luxembourg, Belgique.</p></div>
-      <div><h4>Nous trouver</h4><p>57 rue du Béarn<br>54400 Cosnes-et-Romain</p></div>
-      <div><h4>Contact</h4><a href="tel:+33382894450">+33 3 82 89 44 50</a><br><a href="mailto:byc@cuisinecreation-traiteur.com">byc@cuisinecreation-traiteur.com</a><p style="margin-top:10px">Mardi – vendredi<br>9 h–12 h · 13 h–18 h</p></div>
-      <div><h4>Suivre</h4><a href="https://www.instagram.com/cuisinecreationtraiteur/">Instagram</a><br><a href="https://www.facebook.com/cuisinecreationtraiteur/">Facebook</a></div>
+      <div><img data-i18n-attr="alt:a225" src="img/logo.png" alt="Cuisine Création Traiteur"><p data-i18n="t164">Traiteur organisateur de réception depuis 2006. Grand Est, Luxembourg, Belgique.</p></div>
+      <div><h4 data-i18n="t165">Nous trouver</h4><p data-i18n="t166">57 rue du Béarn<br>54400 Cosnes-et-Romain</p></div>
+      <div><h4 data-i18n="t167">Contact</h4><a href="tel:+33382894450">+33 3 82 89 44 50</a><br><a href="mailto:byc@cuisinecreation-traiteur.com">byc@cuisinecreation-traiteur.com</a><p data-i18n="t168" style="margin-top:10px">Mardi – vendredi<br>9 h–12 h · 13 h–18 h</p></div>
+      <div><h4 data-i18n="t169">Suivre</h4><a href="https://www.instagram.com/cuisinecreationtraiteur/">Instagram</a><br><a href="https://www.facebook.com/cuisinecreationtraiteur/">Facebook</a></div>
     </div>
-    <div class="legal"><span>© 2026 Cuisine Création Traiteur</span><span><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">Cookies</a></span></div>
+    <div class="legal"><span data-i18n="t170">© 2026 Cuisine Création Traiteur</span><span><a data-i18n="t171" href="#">Mentions légales</a><a data-i18n="t172" href="#">Confidentialité</a><a data-i18n="t173" href="#">Cookies</a></span></div>
   </div>
 </footer>
 
 <!-- ===== BARRE MOBILE fixe « Appeler / Devis » (visible sous 760 px) ===== -->
-<div class="mcta" id="mcta"><a class="btn btn-line" href="tel:+33382894450">Appeler</a><a class="btn btn-gold" href="#devis">Devis</a></div>
+<div class="mcta" id="mcta"><a data-i18n="t174" class="btn btn-line" href="tel:+33382894450">Appeler</a><a data-i18n="t175" class="btn btn-gold" href="#devis">Devis</a></div>
 
 <!-- Bibliothèques externes (CDN) : GSAP + ScrollTrigger pour les animations au scroll,
      Lenis pour le défilement doux. À charger AVANT js/main.js. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- Traductions (EN, LB, NL, DE) + bulle de choix de langue. À charger AVANT js/main.js -->
+<script src="js/i18n.js"></script>
 <!-- Comportements du site : menu, diaporama, animations, formulaire -->
 <script src="js/main.js"></script>
 </body>

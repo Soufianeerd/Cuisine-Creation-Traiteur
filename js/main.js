@@ -22,6 +22,7 @@
      9. Accordéon des formats
     10. Galerie des lieux à faire glisser à la souris
     11. Formulaire de devis en 3 étapes (front-end uniquement)
+    12. Changement de langue (textes traduits dans js/i18n.js)
 
    Astuce dépannage : ouvrir la console du navigateur (F12 › Console).
    Une erreur rouge indique le numéro de ligne de ce fichier à regarder.
@@ -44,6 +45,12 @@
   // GSAP et ScrollTrigger sont-ils bien chargés ?
   var hasGsap = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+  // Traductions : I18N.t('clé') renvoie le texte dans la langue choisie
+  // (défini dans js/i18n.js ; repli en français si le fichier manque)
+  function tr(key, fallback) {
+    return (window.I18N && window.I18N.t) ? window.I18N.t(key) : fallback;
+  }
 
   // Durées réglables (en millisecondes)
   var LOADER_DURATION = 1500;   // temps d'affichage de l'écran de chargement
@@ -141,7 +148,7 @@
   function openMenu() {
     document.body.classList.add('menu-open');
     burger.setAttribute('aria-expanded', 'true');
-    burger.setAttribute('aria-label', 'Fermer le menu');
+    burger.setAttribute('aria-label', tr('menuClose', 'Fermer le menu'));
     mobileMenu.setAttribute('aria-hidden', 'false');
     if (lenis) lenis.stop();                      // bloque le scroll derrière le menu
   }
@@ -149,7 +156,7 @@
   function closeMenu() {
     document.body.classList.remove('menu-open');
     burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Ouvrir le menu');
+    burger.setAttribute('aria-label', tr('menuOpen', 'Ouvrir le menu'));
     mobileMenu.setAttribute('aria-hidden', 'true');
     if (lenis) lenis.start();
   }
@@ -191,8 +198,10 @@
      éclairer un par un au scroll (animation dans la partie 8).
      ------------------------------------------------------------------------ */
   var manifesto = document.getElementById('mani');
+  var words = [];
+  var manifestoTween = null;
 
-  (function splitWords(node) {
+  function splitWords(node) {
     [].slice.call(node.childNodes).forEach(function (child) {
       if (child.nodeType === 3) {                 // nœud texte
         var frag = document.createDocumentFragment();
@@ -212,9 +221,23 @@
         splitWords(child);
       }
     });
-  })(manifesto);
+  }
 
-  var words = [].slice.call(manifesto.querySelectorAll('.w'));
+  // Découpe le texte puis lance l'animation « mot par mot » (partie 8a).
+  // Rappelée à chaque changement de langue, car le texte est remplacé.
+  function buildManifesto() {
+    splitWords(manifesto);
+    words = [].slice.call(manifesto.querySelectorAll('.w'));
+    if (manifestoTween) { manifestoTween.scrollTrigger.kill(); manifestoTween.kill(); }
+    if (hasGsap && !reduce) {
+      manifestoTween = gsap.to(words, {
+        opacity: 1, stagger: 0.05, ease: 'none',
+        scrollTrigger: { trigger: manifesto, start: 'top 80%', end: 'bottom 45%', scrub: true }
+      });
+    } else {
+      words.forEach(function (w) { w.style.opacity = 1; });
+    }
+  }
 
 
   /* ------------------------------------------------------------------------
@@ -243,10 +266,7 @@
   if (hasGsap && !reduce) {
 
     // 8a. Les mots du manifeste passent de transparent à opaque au scroll
-    gsap.to(words, {
-      opacity: 1, stagger: 0.05, ease: 'none',
-      scrollTrigger: { trigger: manifesto, start: 'top 80%', end: 'bottom 45%', scrub: true }
-    });
+    //     (animation créée dans buildManifesto(), partie 6)
 
     // 8b. Parallaxe douce sur les images marquées data-par dans le HTML
     //     (l'image glisse légèrement à l'intérieur de son cadre)
@@ -329,10 +349,9 @@
     // Recalcule toutes les positions une fois les images chargées
     window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 
-  } else {
-    // Sans GSAP : le manifeste s'affiche directement en entier
-    words.forEach(function (w) { w.style.opacity = 1; });
   }
+
+  buildManifesto();
 
 
   /* ------------------------------------------------------------------------
@@ -418,7 +437,7 @@
     progressBars.forEach(function (bar, k) { bar.classList.toggle('on', k <= Math.min(step, 2)); });
     backBtn.hidden = (step === 0 || step === 3);
     nextBtn.hidden = (step === 3);
-    nextBtn.innerHTML = (step === 2 ? 'Envoyer ma demande' : 'Continuer') + ' <span class="arr">→</span>';
+    updateNextLabel();
     errorBox.textContent = '';
     var firstField = steps[step].querySelector('input, select, textarea');
     if (firstField && step > 0) {
@@ -426,18 +445,23 @@
     }
   }
 
+  // Libellé du bouton principal selon l'étape (dans la langue choisie)
+  function updateNextLabel() {
+    nextBtn.innerHTML = (step === 2 ? tr('send', 'Envoyer ma demande') : tr('next', 'Continuer')) + ' <span class="arr">→</span>';
+  }
+
   // Vérifie l'étape en cours. Renvoie un message d'erreur, ou '' si tout va bien.
   function validate() {
     if (step === 0 && !document.querySelector('input[name=type]:checked')) {
-      return 'Choisissez un type d’événement.';
+      return tr('errType', 'Choisissez un type d’événement.');
     }
     if (step === 1 && !document.getElementById('f-guests').value) {
-      return 'Indiquez un nombre approximatif d’invités.';
+      return tr('errGuests', 'Indiquez un nombre approximatif d’invités.');
     }
     if (step === 2) {
-      if (!document.getElementById('f-name').value.trim()) return 'Indiquez votre nom.';
-      if (!/^\S+@\S+\.\S+$/.test(document.getElementById('f-email').value)) return 'Indiquez une adresse e-mail valide.';
-      if (!document.getElementById('f-ok').checked) return 'Merci d’accepter le traitement de vos données.';
+      if (!document.getElementById('f-name').value.trim()) return tr('errName', 'Indiquez votre nom.');
+      if (!/^\S+@\S+\.\S+$/.test(document.getElementById('f-email').value)) return tr('errEmail', 'Indiquez une adresse e-mail valide.');
+      if (!document.getElementById('f-ok').checked) return tr('errOk', 'Merci d’accepter le traitement de vos données.');
     }
     return '';
   }
@@ -458,9 +482,10 @@
       var type = document.querySelector('input[name=type]:checked').value;
       var guests = document.getElementById('f-guests').value;
       var firstName = document.getElementById('f-name').value.trim().split(' ')[0];
+      var typeLabel = document.querySelector('input[name=type]:checked').closest('.choice').querySelector('b').textContent;
       document.getElementById('recap').textContent =
-        'Merci ' + firstName + '. Votre demande « ' + type + ' » pour ' + guests +
-        ' invités est prête. Version de démonstration : l’envoi sera activé à la mise en ligne.';
+        tr('recap', 'Merci {name}. Votre demande « {type} » pour {guests} invités est prête.')
+          .replace('{name}', firstName).replace('{type}', typeLabel).replace('{guests}', guests);
     }
     goTo(step + 1);
   });
@@ -472,6 +497,19 @@
     radio.addEventListener('change', function () {
       setTimeout(function () { if (step === 0) goTo(1); }, 350);
     });
+  });
+
+  /* ------------------------------------------------------------------------
+     12. CHANGEMENT DE LANGUE (événement envoyé par js/i18n.js)
+     Les textes viennent d'être remplacés : on redécoupe le manifeste, on remet
+     le bon libellé au bouton du formulaire et on recalcule les animations.
+     ------------------------------------------------------------------------ */
+  document.addEventListener('langchange', function () {
+    buildManifesto();
+    updateNextLabel();
+    errorBox.textContent = '';
+    burger.setAttribute('aria-label', document.body.classList.contains('menu-open') ? tr('menuClose', 'Fermer le menu') : tr('menuOpen', 'Ouvrir le menu'));
+    if (hasGsap) ScrollTrigger.refresh();
   });
 
   // Sécurité : la touche Entrée ne recharge jamais la page

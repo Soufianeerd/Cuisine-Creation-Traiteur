@@ -24,6 +24,7 @@
     18.  Pied de page
     19.  Barre d'action mobile « Appeler / Devis »
     20.  Apparitions au scroll + mode « animations réduites »
+    21.  Bulle de choix de langue
 
    Points de rupture (responsive) utilisés :
      1080 px : le menu passe en bouton burger
@@ -209,6 +210,20 @@ em{font-style:italic}
 .signline{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 22px;margin:clamp(48px,6vw,80px) 0 0;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-light);font-weight:600}
 .signline i{display:block;width:48px;height:1px;background:var(--gold-deep)}
 
+
+/* --- Pays d'intervention : emblème + nom souligné en doré + zones --- */
+.pays{margin-top:clamp(70px,9vw,130px);text-align:center;position:relative;z-index:2}
+.pays-title{color:var(--gold-deep);margin:0 0 clamp(36px,4vw,56px)}
+.pays-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
+.pays-list li{display:flex;flex-direction:column;align-items:center;gap:14px}
+.emb{height:clamp(110px,11vw,160px);width:auto;filter:drop-shadow(0 14px 22px rgba(18,17,16,.16));transition:transform .9s var(--ease)}
+.emb-fr{height:clamp(96px,9.6vw,140px);margin:clamp(7px,.7vw,10px) 0}   /* l'emblème français n'a pas de couronne : un peu plus petit pour s'aligner */
+.pays-list li:hover .emb{transform:translateY(-6px)}
+.pays-nom{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.4vw,54px);line-height:1;position:relative;padding-bottom:14px;margin-top:8px}
+.pays-nom::after{content:"";position:absolute;left:50%;bottom:0;width:64px;height:1px;background:var(--gold-deep);transform:translateX(-50%) scaleX(0);transition:transform 1.2s var(--ease) .3s}
+.pays-list li.in .pays-nom::after{transform:translateX(-50%) scaleX(1)}
+.pays-zone{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-light);font-weight:600;max-width:260px;line-height:1.7}
+@media (max-width:760px){.pays-list{grid-template-columns:1fr;gap:48px}}
 
 /* ==========================================================================
    9. NOS RÉCEPTIONS — CARTES EMPILÉES
@@ -527,3 +542,20 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
   .manifesto .big .w{opacity:1!important}
   .reveal-clip::after{display:none}
 }
+
+
+/* ==========================================================================
+   21. BULLE DE CHOIX DE LANGUE
+   Créée par js/i18n.js : bouton rond (.lang-btn) en bas à gauche, qui ouvre
+   la liste des langues (.lang-menu) quand .lang reçoit la classe .open.
+   Sur mobile, elle remonte au-dessus de la barre « Appeler / Devis ».
+   ========================================================================== */
+.lang{position:fixed;left:20px;bottom:20px;z-index:85}
+.lang-btn{width:52px;height:52px;border-radius:50%;border:1px solid rgba(196,162,106,.6);background:rgba(18,17,16,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.08em;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .5s var(--ease),background .4s}
+.lang-btn:hover{transform:scale(1.06);background:var(--ink)}
+.lang-menu{list-style:none;margin:0;padding:8px;position:absolute;left:0;bottom:64px;min-width:210px;background:var(--ink);border:1px solid rgba(196,162,106,.3);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(10px) scale(.97);transform-origin:bottom left;transition:opacity .35s var(--ease),transform .45s var(--ease),visibility .35s}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{width:100%;display:flex;align-items:center;gap:14px;background:none;border:0;color:var(--ivory);padding:10px 12px;border-radius:9px;cursor:pointer;font-size:14px;text-align:left;min-height:44px}
+.lang-menu button b{width:26px;color:var(--gold);font-size:12px;letter-spacing:.1em}
+.lang-menu button:hover,.lang-menu button[aria-checked="true"]{background:rgba(196,162,106,.14)}
+@media (max-width:760px){.lang{left:14px;bottom:80px}.lang-btn{width:46px;height:46px}}

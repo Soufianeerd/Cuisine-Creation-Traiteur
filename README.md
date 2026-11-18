@@ -8,8 +8,10 @@ Maquette front-end du nouveau site de Cuisine Création Traiteur, traiteur organ
 index.html        Contenu et structure : textes, images, liens, formulaire
 css/style.css     Mise en forme : couleurs, polices, mise en page, responsive, animations CSS
 js/main.js        Interactions : menu, diaporama, animations au scroll, accordéon, formulaire
+js/i18n.js        Traductions (EN, LB, NL, DE) + bulle de choix de langue
 img/              Photos du site (WebP, issues du site actuel)
 img/logos/        Logos des références clients (PNG)
+img/emblemes/     Emblèmes France / Luxembourg / Belgique (WebP transparent)
 ```
 
 Chaque fichier commence par un sommaire, et chaque section est commentée.
@@ -24,12 +26,22 @@ Chaque fichier commence par un sommaire, et chaque section est commentée.
 | Ajuster une section (taille, espacement)   | `css/style.css`  | Partie portant le nom de la section             |
 | Vitesse du diaporama / écran de chargement | `js/main.js`     | Partie 0 (`SLIDE_INTERVAL`, `LOADER_DURATION`)  |
 | Brancher l'envoi du formulaire             | `js/main.js`     | Partie 11, bloc « ENVOI »                       |
+| Corriger une traduction                    | `js/i18n.js`     | Chercher la clé du texte (ex. `t017`) dans la langue |
 | Ajouter un logo client                     | `index.html` + `img/logos/` | Section « Avis + logos clients »     |
+
+## Traductions
+
+Le site est disponible en 5 langues : français (langue d'origine), anglais, luxembourgeois, néerlandais (Belgique flamande) et allemand. La bulle en bas à gauche permet de changer de langue ; le choix est mémorisé dans le navigateur, et à la première visite la langue du navigateur est utilisée si elle est disponible.
+
+- Le texte français reste écrit dans `index.html`. Chaque texte traduisible y porte une clé : `data-i18n="t017"` (contenu) ou `data-i18n-attr="alt:a180"` (attributs `alt`, `placeholder`, `aria-label`).
+- `js/i18n.js` contient les traductions rangées par langue puis par clé, et les messages du formulaire (`ui`).
+- Nouveau texte : l'écrire en français dans `index.html` avec une clé libre (ex. `data-i18n="t200"`), puis ajouter `t200` dans chaque langue de `js/i18n.js`. Une clé manquante garde le texte français.
+- Les traductions luxembourgeoises et néerlandaises gagneront à être relues par un locuteur natif avant la mise en ligne.
 
 ## Si quelque chose casse
 
 1. Ouvrir la console du navigateur (F12 › Console) : une erreur rouge indique le fichier et la ligne.
-2. Les animations ne marchent plus mais le site s'affiche : les bibliothèques CDN (GSAP, Lenis) n'ont pas chargé. Vérifier les balises `<script>` en bas de `index.html` (elles doivent être **avant** `js/main.js`).
+2. Les animations ne marchent plus mais le site s'affiche : les bibliothèques CDN (GSAP, Lenis) n'ont pas chargé. Vérifier les balises `<script>` en bas de `index.html` (elles doivent être **avant** `js/main.js`, tout comme `js/i18n.js`).
 3. Mise en page cassée : vérifier que `css/style.css` est bien chargé (onglet Réseau, F12).
 
 ## Lancer en local
