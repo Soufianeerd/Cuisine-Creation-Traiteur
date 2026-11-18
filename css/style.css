@@ -216,8 +216,7 @@ em{font-style:italic}
 .pays-title{color:var(--gold-deep);margin:0 0 clamp(36px,4vw,56px)}
 .pays-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
 .pays-list li{display:flex;flex-direction:column;align-items:center;gap:22px}
-.emb{height:clamp(110px,11vw,160px);width:auto;filter:drop-shadow(0 14px 22px rgba(18,17,16,.16));transition:transform .9s var(--ease)}
-.emb-fr{height:clamp(96px,9.6vw,140px);margin:clamp(7px,.7vw,10px) 0}   /* l'emblème français n'a pas de couronne : un peu plus petit pour s'aligner */
+.emb{height:96px;width:auto;filter:drop-shadow(0 14px 22px rgba(18,17,16,.16));transition:transform .9s var(--ease)}
 .pays-list li:hover .emb{transform:translateY(-6px)}
 /* Nom du pays + zones sur UNE seule ligne, même police (13 px), pays en gras */
 .pays-ligne{display:flex;align-items:baseline;justify-content:center;flex-wrap:nowrap;gap:10px;white-space:nowrap;font-family:var(--sans);font-size:13px;letter-spacing:.06em;color:var(--muted-light);position:relative;padding-bottom:14px}
